@@ -1,5 +1,6 @@
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
+import { ReactComponent as AtSVG } from '../icons/at.svg';
 import { ReactComponent as GitHubSVG } from '../icons/github.svg';
 import { ReactComponent as TwitterSVG } from '../icons/twitter.svg';
 import { ReactComponent as FacebookSVG } from '../icons/facebook.svg';
@@ -7,6 +8,13 @@ import { ReactComponent as LinkedInSVG } from '../icons/linkedin.svg';
 import { ReactComponent as TelegramSVG } from '../icons/telegram.svg';
 import { ReactComponent as WhatsAppSVG } from '../icons/whatsapp.svg';
 
+export const AtIcon = (props: SvgIconProps): JSX.Element => {
+    return (
+        <SvgIcon {...props}>
+            <AtSVG />
+        </SvgIcon>
+    );
+};
 export const GitHubIcon = (props: SvgIconProps): JSX.Element => {
     return (
         <SvgIcon {...props}>
@@ -56,6 +64,7 @@ export const WhatsAppIcon = (props: SvgIconProps): JSX.Element => {
 };
 
 export default {
+    AtIcon,
     GitHubIcon,
     FacebookIcon,
     LinkedInIcon,
