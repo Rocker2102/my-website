@@ -13,7 +13,7 @@ import logo from '../logo.svg';
 import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
 
-const links = ['home', 'projects', 'about', 'contact'];
+const links: string[] = ['home', 'projects', 'about', 'contact'];
 
 const ElevationScroll: React.FC = ({ children }) => {
     const trigger = useScrollTrigger({

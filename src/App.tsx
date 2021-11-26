@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/system';
+import { Theme, ThemeProvider } from '@mui/system';
 import { createTheme } from '@mui/material/styles';
 
 import TopNavbar from './components/TopNavbar';
@@ -7,7 +7,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
 function App(): JSX.Element {
-    const theme = createTheme({
+    const theme: Theme = createTheme({
         palette: {
             mode: 'dark'
         },
