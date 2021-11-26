@@ -6,7 +6,14 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
-import { GitHubIcon, FacebookIcon, LinkedInIcon, TwitterIcon, WhatsAppIcon } from './SvgIcons';
+import {
+    AtIcon,
+    GitHubIcon,
+    FacebookIcon,
+    LinkedInIcon,
+    TwitterIcon,
+    WhatsAppIcon
+} from './SvgIcons';
 
 interface SocialLink {
     name: string;
@@ -24,6 +31,11 @@ const socialLinks: SocialLink[] = [
         name: 'LinkedIn',
         href: 'https://www.linkedin.com/in/rocker2102/',
         icon: <LinkedInIcon fontSize="large" />
+    },
+    {
+        name: 'Email',
+        href: 'mailto:ankushyadav9302@gmail.com',
+        icon: <AtIcon fontSize="large" />
     },
     {
         name: 'Facebook',
@@ -66,7 +78,7 @@ const Home: React.FC = () => {
                 Student &amp; Full-Stack Web Developer
             </Typography>
 
-            <Stack direction="row" spacing={4} mt={5} justifyContent="center">
+            <Stack direction="row" spacing={4} mt={5} justifyContent="center" alignItems="center">
                 {socialLinks.map((social: SocialLink) => (
                     <CustomLink key={social.name} href={social.href} target="_blank">
                         {social.icon}
