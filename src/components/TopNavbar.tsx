@@ -10,10 +10,9 @@ import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import logo from '../logo.svg';
+import { ROUTES } from '../shared/utils';
 import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
-
-const links: string[] = ['home', 'projects', 'about', 'contact'];
 
 const ElevationScroll: React.FC = ({ children }) => {
     const trigger = useScrollTrigger({
@@ -79,10 +78,10 @@ const TopNavbar: React.FC = () => {
                         </Box>
 
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            {links.map(link => (
+                            {ROUTES.map(({ name, path }) => (
                                 <CustomLink
-                                    key={link}
-                                    onClick={() => history.push(`/${link}`)}
+                                    key={name}
+                                    onClick={() => history.push(path)}
                                     sx={{
                                         mx: 3,
                                         my: 2,
@@ -91,7 +90,7 @@ const TopNavbar: React.FC = () => {
                                         textTransform: 'capitalize'
                                     }}
                                 >
-                                    {link}
+                                    {name}
                                 </CustomLink>
                             ))}
                         </Box>

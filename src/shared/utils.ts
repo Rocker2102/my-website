@@ -19,7 +19,8 @@ export const ROUTES: {
     name: string;
     path: string;
     /**
-     * Whether the patch is to be matched exactly or not
+     * Whether the path is to be matched exactly or not
+     * (not in use currently, may be removed in the future)
      */
     exact: boolean;
 }[] = [
