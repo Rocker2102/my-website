@@ -9,6 +9,9 @@ const Contact: React.FC = () => {
                 <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
                     Contact Info
                 </Typography>
+                <Typography variant="h4" color="text.primary" fontFamily="LexendDeca Light">
+                    How would you like to get in touch? 😊
+                </Typography>
             </Box>
         </Grow>
     );
