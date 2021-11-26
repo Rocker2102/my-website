@@ -9,6 +9,12 @@ const About: React.FC = () => {
                 <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
                     About Me
                 </Typography>
+
+                <Box>
+                    <Typography variant="h4" color="text.primary" fontFamily="LexendDeca Light">
+                        Under development
+                    </Typography>
+                </Box>
             </Box>
         </Grow>
     );

@@ -9,6 +9,12 @@ const Projects: React.FC = () => {
                 <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
                     My Projects
                 </Typography>
+
+                <Box>
+                    <Typography variant="h4" color="text.primary" fontFamily="LexendDeca Light">
+                        Under development
+                    </Typography>
+                </Box>
             </Box>
         </Grow>
     );
