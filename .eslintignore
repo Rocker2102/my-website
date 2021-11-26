@@ -1,0 +1,7 @@
+node_modules
+.github
+build
+dist
+types
+src/*.test.tsx
+src/*.d.ts

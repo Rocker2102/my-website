@@ -1,0 +1,37 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-alert": 2,
+    "no-console": 0,
+    "no-extra-bind": 2,
+    "no-implicit-globals": 1,
+    "no-constructor-return": 2,
+    "no-duplicate-imports": 2,
+    "no-promise-executor-return": 2,
+    "no-use-before-define": 2,
+
+    "camelcase": 1,
+    "spaced-comment": 2,
+    "semi": [2, "always", { "omitLastInOneLineBlock": true }],
+    "quotes": [2, "single"],
+    "max-len": ["warn", { "code": 100 }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

@@ -1,3 +1,3 @@
-# Homepage of my <a href="http://rocker.epizy.com/">Website</a>
+# My Website
 
-Front-end codes for homepage of my site.
+Made with ❤️ using **[React.JS](https://reactjs.org/)** & **[MaterialUI](https://mui.com/)** - **[TypeScript](https://www.typescriptlang.org/)**
