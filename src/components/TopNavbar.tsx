@@ -14,6 +14,8 @@ import { ROUTES } from '../shared/utils';
 import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
 
+const toolbarId = 'app-root-toolbar';
+
 const ElevationScroll: React.FC = ({ children }) => {
     const trigger = useScrollTrigger({
         disableHysteresis: true,
@@ -49,12 +51,14 @@ const TopNavbar: React.FC = () => {
             <AppBar position="fixed">
                 <Container maxWidth="xl">
                     <Toolbar
+                        id={toolbarId}
                         disableGutters
                         sx={{
                             mx: 5,
                             display: 'flex',
                             justifyContent: 'space-between',
-                            alignItems: 'center'
+                            alignItems: 'center',
+                            transition: 'all 0.3s'
                         }}
                     >
                         <Box>
