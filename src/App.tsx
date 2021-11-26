@@ -3,6 +3,9 @@ import { createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Projects from './components/Projects';
 import TopNavbar from './components/TopNavbar';
 
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
@@ -34,14 +37,20 @@ function App(): JSX.Element {
                         <TopNavbar />
 
                         <Switch>
-                            <Route exact path="/projects">
-                                <section className="main">Projects</section>
-                            </Route>
                             <Route exact path="/about">
-                                <section className="main">About</section>
+                                <section className="main">
+                                    <About />
+                                </section>
                             </Route>
                             <Route exact path="/contact">
-                                <section className="main">Contact</section>
+                                <section className="main">
+                                    <Contact />
+                                </section>
+                            </Route>
+                            <Route exact path="/projects">
+                                <section className="main">
+                                    <Projects />
+                                </section>
                             </Route>
                             <Route>
                                 <section className="main">
