@@ -30,7 +30,13 @@ const CustomLink: React.FC<CustomLinkProps> = props => {
         }
     }));
 
-    return <Tmp {...props}>{props.children}</Tmp>;
+    /**
+     * Remove activeColor from props because React doesn't recognise it
+     */
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    const { activeColor, ...newProps } = props;
+
+    return <Tmp {...newProps}>{props.children}</Tmp>;
 };
 
 const Home: React.FC = () => {
