@@ -1,5 +1,14 @@
+@font-face {
+    font-family: 'Open Sans';
+    src:
+        local('Open Sans'),
+        url(./fonts/OpenSans-Regular.ttf)
+        format('truetype');
+}
+
 .app {
     text-align: center;
+    font-family: 'Open Sans';
 }
 
 section.main {
