@@ -69,9 +69,10 @@ const Contact: React.FC = () => {
                     mx={{ xs: 2, sm: 6, md: '6rem', lg: '8rem', xl: '10rem' }}
                 >
                     <Grid container spacing={{ xs: 0.5, sm: 1, md: 2, lg: 3 }} rowSpacing={2}>
-                        {CONTACT_POINTS.map(contact => (
-                            <ContactRowItem key={contact.name} {...contact} />
-                        ))}
+                        {CONTACT_POINTS.map(contact => {
+                            if (contact.showOnContact === false) return null;
+                            return <ContactRowItem key={contact.name} {...contact} />;
+                        })}
                     </Grid>
                 </Box>
             </Box>
