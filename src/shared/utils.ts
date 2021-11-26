@@ -94,7 +94,7 @@ export const CONTACT_POINTS: {
         username: '@rocker2102',
         showOnHome: true,
         activeColor: '#0088CC',
-        showOnContact: true
+        showOnContact: false
     },
     {
         name: 'Twitter',
@@ -112,6 +112,6 @@ export const CONTACT_POINTS: {
         username: '+91 95892 03992',
         showOnHome: false,
         activeColor: '#4AC959',
-        showOnContact: false
+        showOnContact: true
     }
 ];
