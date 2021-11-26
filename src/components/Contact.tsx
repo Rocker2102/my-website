@@ -40,6 +40,7 @@ const ContactRowItem: React.FC<typeof CONTACT_POINTS[number]> = Props => {
                                     variant="subtitle1"
                                     fontWeight={400}
                                     fontFamily="LexendDeca Light"
+                                    display={{ xs: 'none', sm: 'block' }}
                                 >
                                     {Props.username ?? '-'}
                                 </Typography>
