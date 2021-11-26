@@ -20,6 +20,7 @@ interface SocialLink {
     name: string;
     href: string;
     icon: JSX.Element;
+    activeColor?: string;
 }
 
 const socialLinks: SocialLink[] = [
@@ -31,7 +32,8 @@ const socialLinks: SocialLink[] = [
     {
         name: 'LinkedIn',
         href: 'https://www.linkedin.com/in/rocker2102/',
-        icon: <LinkedInIcon fontSize="large" />
+        icon: <LinkedInIcon fontSize="large" />,
+        activeColor: '#2867B2'
     },
     {
         name: 'Email',
@@ -41,33 +43,46 @@ const socialLinks: SocialLink[] = [
     {
         name: 'Facebook',
         href: 'https://www.facebook.com/rocker2102',
-        icon: <FacebookIcon fontSize="large" />
+        icon: <FacebookIcon fontSize="large" />,
+        activeColor: '#4267B2'
     },
     {
         name: 'Twitter',
         href: 'https://twitter.com/Rocker_2102',
-        icon: <TwitterIcon fontSize="large" />
+        icon: <TwitterIcon fontSize="large" />,
+        activeColor: '#1DA1F2'
     },
     {
         name: 'WhatsApp',
         href: 'https://wa.me/+919589203992',
-        icon: <WhatsAppIcon fontSize="large" />
+        icon: <WhatsAppIcon fontSize="large" />,
+        activeColor: '#4AC959'
     }
 ];
 
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-const CustomLink = styled(Link)(({ theme }) => ({
-    cursor: 'pointer',
-    textDecoration: 'none',
-    transition: 'all 0.3s ease',
-    '&:hover': {
-        color: '#fff',
-        transform: 'scale(1.3)'
-    },
-    '&:focus': {
-        color: '#fff'
-    }
-}));
+interface CustomLinkProps {
+    href?: string;
+    target?: string;
+    activeColor?: string;
+}
+
+const CustomLink: React.FC<CustomLinkProps> = props => {
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    const Tmp = styled(Link)(({ theme }) => ({
+        cursor: 'pointer',
+        textDecoration: 'none',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+            color: props.activeColor ?? '#fff',
+            transform: 'scale(1.3)'
+        },
+        '&:focus': {
+            color: props.activeColor ?? '#fff'
+        }
+    }));
+
+    return <Tmp {...props}>{props.children}</Tmp>;
+};
 
 const Home: React.FC = () => {
     return (
@@ -99,7 +114,12 @@ const Home: React.FC = () => {
                     alignItems="center"
                 >
                     {socialLinks.map((social: SocialLink) => (
-                        <CustomLink key={social.name} href={social.href} target="_blank">
+                        <CustomLink
+                            key={social.name}
+                            href={social.href}
+                            target="_blank"
+                            activeColor={social?.activeColor}
+                        >
                             {social.icon}
                         </CustomLink>
                     ))}
