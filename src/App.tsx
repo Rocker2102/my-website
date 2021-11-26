@@ -1,6 +1,8 @@
 import { Theme, ThemeProvider } from '@mui/system';
 import { createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
+import Home from './components/Home';
 import TopNavbar from './components/TopNavbar';
 
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
@@ -23,28 +25,34 @@ function App(): JSX.Element {
     });
 
     return (
-        <div className="app">
-            <Router>
-                <ThemeProvider theme={theme}>
-                    <TopNavbar />
+        <>
+            <CssBaseline />
 
-                    <Switch>
-                        <Route exact path="/projects">
-                            <section className="main">Projects</section>
-                        </Route>
-                        <Route exact path="/about">
-                            <section className="main">About</section>
-                        </Route>
-                        <Route exact path="/contact">
-                            <section className="main">Contact</section>
-                        </Route>
-                        <Route>
-                            <section className="main">Home</section>
-                        </Route>
-                    </Switch>
-                </ThemeProvider>
-            </Router>
-        </div>
+            <div className="app">
+                <Router>
+                    <ThemeProvider theme={theme}>
+                        <TopNavbar />
+
+                        <Switch>
+                            <Route exact path="/projects">
+                                <section className="main">Projects</section>
+                            </Route>
+                            <Route exact path="/about">
+                                <section className="main">About</section>
+                            </Route>
+                            <Route exact path="/contact">
+                                <section className="main">Contact</section>
+                            </Route>
+                            <Route>
+                                <section className="main">
+                                    <Home />
+                                </section>
+                            </Route>
+                        </Switch>
+                    </ThemeProvider>
+                </Router>
+            </div>
+        </>
     );
 }
 
