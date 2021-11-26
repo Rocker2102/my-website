@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
@@ -63,10 +64,11 @@ const Home: React.FC = () => {
 
                 <Stack
                     direction="row"
-                    spacing={4}
+                    spacing={3}
                     mt={5}
                     justifyContent="center"
                     alignItems="center"
+                    divider={<Divider orientation="vertical" flexItem />}
                 >
                     {CONTACT_POINTS.map(({ name, href, activeColor, Icon, showOnHome }) =>
                         showOnHome ? (
