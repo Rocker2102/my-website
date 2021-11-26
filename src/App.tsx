@@ -24,36 +24,23 @@ function App(): JSX.Element {
     });
 
     return (
-        <div className="App">
+        <div className="app">
             <Router>
                 <ThemeProvider theme={theme}>
                     <NavbarComponent />
 
                     <Switch>
                         <Route exact path="/projects">
-                            <header className="App-header">Projects</header>
+                            <section className="main">Projects</section>
                         </Route>
                         <Route exact path="/about">
-                            <header className="App-header">About</header>
+                            <section className="main">About</section>
                         </Route>
                         <Route exact path="/contact">
-                            <header className="App-header">Contact</header>
+                            <section className="main">Contact</section>
                         </Route>
                         <Route>
-                            <header className="App-header">
-                                <img src={logo} className="App-logo" alt="logo" />
-                                <p>
-                                    Edit <code>src/App.tsx</code> and save to reload.
-                                </p>
-                                <a
-                                    className="App-link"
-                                    href="https://reactjs.org"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Learn React
-                                </a>
-                            </header>
+                            <section className="main">Home</section>
                         </Route>
                     </Switch>
                 </ThemeProvider>
