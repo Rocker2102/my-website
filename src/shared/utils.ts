@@ -7,6 +7,7 @@ import {
     GitHubIcon,
     FacebookIcon,
     LinkedInIcon,
+    TelegramIcon,
     TwitterIcon,
     WhatsAppIcon
 } from '../components/SvgIcons';
@@ -50,20 +51,20 @@ export const CONTACT_POINTS: {
     showOnContact: boolean;
 }[] = [
     {
-        name: 'GitHub',
-        href: 'https://github.com/Rocker2102',
-        Icon: GitHubIcon,
-        username: '@Rocker2102',
-        showOnHome: true,
-        showOnContact: true
-    },
-    {
         name: 'LinkedIn',
         href: 'https://www.linkedin.com/in/rocker2102/',
         Icon: LinkedInIcon,
         username: '@rocker2102',
         showOnHome: true,
         activeColor: '#2867B2',
+        showOnContact: true
+    },
+    {
+        name: 'GitHub',
+        href: 'https://github.com/Rocker2102',
+        Icon: GitHubIcon,
+        username: '@Rocker2102',
+        showOnHome: true,
         showOnContact: true
     },
     {
@@ -79,8 +80,17 @@ export const CONTACT_POINTS: {
         href: 'https://www.facebook.com/rocker2102',
         Icon: FacebookIcon,
         username: 'ankushyadav9302@gmail.com',
-        showOnHome: true,
+        showOnHome: false,
         activeColor: '#4267B2',
+        showOnContact: true
+    },
+    {
+        name: 'Telegram',
+        href: 'https://t.me/rocker2102',
+        Icon: TelegramIcon,
+        username: '@rocker2102',
+        showOnHome: true,
+        activeColor: '#0088CC',
         showOnContact: true
     },
     {
@@ -99,6 +109,6 @@ export const CONTACT_POINTS: {
         username: '+91 95892 03992',
         showOnHome: false,
         activeColor: '#4AC959',
-        showOnContact: true
+        showOnContact: false
     }
 ];
