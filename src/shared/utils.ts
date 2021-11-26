@@ -66,6 +66,7 @@ export const CONTACT_POINTS: {
         Icon: GitHubIcon,
         username: '@Rocker2102',
         showOnHome: true,
+        activeColor: '#FFF',
         showOnContact: true
     },
     {
@@ -73,6 +74,7 @@ export const CONTACT_POINTS: {
         href: 'mailto:ankushyadav9302@gmail.com',
         Icon: AtIcon,
         username: 'ankushyadav9302@gmail.com',
+        activeColor: '#DF73FF',
         showOnHome: false,
         showOnContact: true
     },
@@ -80,7 +82,7 @@ export const CONTACT_POINTS: {
         name: 'Facebook',
         href: 'https://www.facebook.com/rocker2102',
         Icon: FacebookIcon,
-        username: 'ankushyadav9302@gmail.com',
+        username: '@rocker2102',
         showOnHome: false,
         activeColor: '#4267B2',
         showOnContact: true
