@@ -6,9 +6,33 @@
         format('truetype');
 }
 
+@font-face {
+    font-family: 'LexendDeca Light';
+    src:
+        local('Open Sans'),
+        url(./fonts/LexendDeca-Light.ttf)
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'LexendDeca';
+    src:
+        local('Open Sans'),
+        url(./fonts/LexendDeca-Regular.ttf)
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src:
+        local('Open Sans'),
+        url(./fonts/Raleway-Regular.ttf)
+        format('truetype');
+}
+
 .app {
     text-align: center;
-    font-family: 'Open Sans';
+    font-family: 'LexendDeca';
 }
 
 section.main {
