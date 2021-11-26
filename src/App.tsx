@@ -1,11 +1,10 @@
 import { ThemeProvider } from '@mui/system';
 import { createTheme } from '@mui/material/styles';
 
-import NavbarComponent from './components/NavbarComponent';
+import TopNavbar from './components/TopNavbar';
 
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import logo from './logo.svg';
 
 function App(): JSX.Element {
     const theme = createTheme({
@@ -27,7 +26,7 @@ function App(): JSX.Element {
         <div className="app">
             <Router>
                 <ThemeProvider theme={theme}>
-                    <NavbarComponent />
+                    <TopNavbar />
 
                     <Switch>
                         <Route exact path="/projects">

@@ -42,7 +42,7 @@ const CustomLink = styled(Link)(({ theme }) => ({
     }
 }));
 
-const NavbarComponent: React.FC = () => {
+const TopNavbar: React.FC = () => {
     const history = useHistory();
 
     return (
@@ -102,4 +102,4 @@ const NavbarComponent: React.FC = () => {
     );
 };
 
-export default NavbarComponent;
+export default TopNavbar;
