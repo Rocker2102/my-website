@@ -30,7 +30,7 @@ const ElevationScroll: React.FC = ({ children }) => {
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const CustomLink = styled(Link)(({ theme }) => ({
     cursor: 'pointer',
-    color: '#327ae3',
+    color: theme.palette.primary.main,
     textDecoration: 'none',
     fontWeight: 450,
     transition: 'color 0.3s ease',
