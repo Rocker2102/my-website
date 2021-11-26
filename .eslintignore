@@ -4,3 +4,4 @@ build
 dist
 types
 src/*.test.tsx
+src/*.d.ts
