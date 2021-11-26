@@ -1,15 +1,17 @@
 import * as React from 'react';
 
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import logo from '../logo.svg';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { styled } from '@mui/material/styles';
+import { useHistory } from 'react-router-dom';
 
 const links = ['home', 'projects', 'about', 'contact'];
 
@@ -25,8 +27,23 @@ const ElevationScroll: React.FC = ({ children }) => {
     });
 };
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+const CustomLink = styled(Link)(({ theme }) => ({
+    cursor: 'pointer',
+    color: '#327ae3',
+    textDecoration: 'none',
+    fontWeight: 450,
+    transition: 'color 0.3s ease',
+    '&:hover': {
+        color: '#0056b3'
+    },
+    '&:focus': {
+        color: '#0056b3'
+    }
+}));
+
 const NavbarComponent: React.FC = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+    const history = useHistory();
 
     return (
         <ElevationScroll>
@@ -63,19 +80,19 @@ const NavbarComponent: React.FC = () => {
 
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {links.map(link => (
-                                <Button
+                                <CustomLink
                                     key={link}
+                                    onClick={() => history.push(`/${link}`)}
                                     sx={{
-                                        mx: 2,
+                                        mx: 3,
                                         my: 2,
                                         fontSize: 18,
-                                        color: 'white',
                                         display: 'block',
                                         textTransform: 'capitalize'
                                     }}
                                 >
                                     {link}
-                                </Button>
+                                </CustomLink>
                             ))}
                         </Box>
                     </Toolbar>
