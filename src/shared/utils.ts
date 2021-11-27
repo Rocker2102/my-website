@@ -4,7 +4,7 @@ import { SvgIconProps } from '@mui/material';
 import HomeIcon from '@mui/icons-material/HomeRounded';
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
-import ContactsIcon from '@mui/icons-material/ContactsRounded';
+import PersonIcon from '@mui/icons-material/PersonOutlineRounded';
 
 import {
     AtIcon,
@@ -32,7 +32,7 @@ export const ROUTES: {
     { name: 'home', path: '/home', exact: false, Icon: HomeIcon },
     { name: 'projects', path: '/projects', exact: true, Icon: WorkIcon },
     { name: 'about', path: '/about', exact: true, Icon: InfoIcon },
-    { name: 'contact', path: '/contact', exact: true, Icon: ContactsIcon }
+    { name: 'contact', path: '/contact', exact: true, Icon: PersonIcon }
 ];
 
 /**
