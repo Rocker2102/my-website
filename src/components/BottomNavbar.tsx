@@ -23,7 +23,16 @@ const BottomNavbar: React.FC<BottomNavbarProps> = ({ currentPath }) => {
     };
 
     return (
-        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <Paper
+            sx={{
+                position: 'fixed',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                display: { xs: 'block', md: 'none' }
+            }}
+            elevation={3}
+        >
             <BottomNavigation value={path} onChange={handleChange}>
                 {ROUTES.map(({ name, path, Icon }) => (
                     <BottomNavigationAction
