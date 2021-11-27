@@ -38,7 +38,11 @@
 section.main {
     background-color: #202122;
     min-height: 100vh;
-    padding: 80px 1em 40px 1em;
+    /**
+     * Fixed (max) height of TopNavbar: 64px
+     * Fixed height of BottomNavbar: 56px
+     */
+    padding: 80px 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
