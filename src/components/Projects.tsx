@@ -2,10 +2,12 @@ import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import Typography from '@mui/material/Typography';
 
+import ContentBox from './ContentBox';
+
 const Projects: React.FC = () => {
     return (
         <Grow in={true} timeout={150}>
-            <Box>
+            <ContentBox>
                 <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
                     My Projects
                 </Typography>
@@ -15,7 +17,7 @@ const Projects: React.FC = () => {
                         Under development
                     </Typography>
                 </Box>
-            </Box>
+            </ContentBox>
         </Grow>
     );
 };

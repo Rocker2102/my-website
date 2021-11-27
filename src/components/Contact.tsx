@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
+import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
 import { CONTACT_POINTS } from '../shared/contactData';
 
@@ -56,7 +57,7 @@ const ContactRowItem: React.FC<typeof CONTACT_POINTS[number]> = Props => {
 const Contact: React.FC = () => {
     return (
         <Grow in={true} timeout={150}>
-            <Box>
+            <ContentBox>
                 <Box mt={4}>
                     <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
                         Contact Info
@@ -65,10 +66,7 @@ const Contact: React.FC = () => {
                         How would you like to get in touch? 😊
                     </Typography>
                 </Box>
-                <Box
-                    mt={{ xs: 4, md: 6, lg: 7 }}
-                    mx={{ xs: 2, sm: 6, md: '6rem', lg: '8rem', xl: '10rem' }}
-                >
+                <Box mt={{ xs: 4, md: 6, lg: 7 }}>
                     <Grid container spacing={{ xs: 0.5, sm: 1, md: 2, lg: 3 }} rowSpacing={2}>
                         {CONTACT_POINTS.map(contact => {
                             if (contact.showOnContact === false) return null;
@@ -76,7 +74,7 @@ const Contact: React.FC = () => {
                         })}
                     </Grid>
                 </Box>
-            </Box>
+            </ContentBox>
         </Grow>
     );
 };

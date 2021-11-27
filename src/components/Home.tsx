@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
+import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
 import { CONTACT_POINTS } from '../shared/contactData';
 
@@ -43,7 +43,7 @@ const CustomLink: React.FC<CustomLinkProps> = props => {
 const Home: React.FC = () => {
     return (
         <Grow in={true} timeout={150}>
-            <Box>
+            <ContentBox>
                 <Typography
                     variant="h2"
                     color="text.primary"
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
                         ) : null
                     )}
                 </Stack>
-            </Box>
+            </ContentBox>
         </Grow>
     );
 };
