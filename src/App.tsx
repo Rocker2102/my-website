@@ -12,7 +12,7 @@ import TopNavbar from './components/TopNavbar';
 import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
-import { ROUTES } from './shared/utils';
+import { ROUTES } from './shared/routeData';
 import { useHistory, Route, Switch } from 'react-router-dom';
 
 function App(): JSX.Element {
