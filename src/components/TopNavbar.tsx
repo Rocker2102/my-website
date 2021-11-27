@@ -54,7 +54,11 @@ const TopNavbar: React.FC = () => {
                         id={toolbarId}
                         disableGutters
                         sx={{
-                            mx: 5,
+                            mx: {
+                                xs: 2,
+                                md: 4,
+                                lg: 5
+                            },
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
