@@ -1,6 +1,10 @@
 import React from 'react';
 
 import { SvgIconProps } from '@mui/material';
+import HomeIcon from '@mui/icons-material/HomeRounded';
+import InfoIcon from '@mui/icons-material/InfoOutlined';
+import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
+import ContactsIcon from '@mui/icons-material/ContactsRounded';
 
 import {
     AtIcon,
@@ -18,16 +22,17 @@ import {
 export const ROUTES: {
     name: string;
     path: string;
+    Icon: React.FC<SvgIconProps>;
     /**
      * Whether the path is to be matched exactly or not
      * (not in use currently, may be removed in the future)
      */
     exact: boolean;
 }[] = [
-    { name: 'home', path: '/home', exact: false },
-    { name: 'projects', path: '/projects', exact: true },
-    { name: 'about', path: '/about', exact: true },
-    { name: 'contact', path: '/contact', exact: true }
+    { name: 'home', path: '/home', exact: false, Icon: HomeIcon },
+    { name: 'projects', path: '/projects', exact: true, Icon: WorkIcon },
+    { name: 'about', path: '/about', exact: true, Icon: InfoIcon },
+    { name: 'contact', path: '/contact', exact: true, Icon: ContactsIcon }
 ];
 
 /**
