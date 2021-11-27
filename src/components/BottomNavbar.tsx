@@ -7,13 +7,19 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { ROUTES } from '../shared/utils';
 import { useHistory } from 'react-router-dom';
 
-const BottomNavbar: React.FC = () => {
+interface BottomNavbarProps {
+    currentPath: string;
+}
+
+const BottomNavbar: React.FC<BottomNavbarProps> = ({ currentPath }) => {
     const history = useHistory();
-    const [path, setPath] = React.useState(window.location.pathname);
+    const [path, setPath] = React.useState(currentPath);
+
+    currentPath !== path ? setPath(currentPath) : false;
 
     const handleChange = (event: React.SyntheticEvent, newPath: string) => {
         setPath(newPath);
-        history.push(newPath);
+        newPath !== currentPath ? history.push(newPath) : false;
     };
 
     return (

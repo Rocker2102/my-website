@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { Theme, ThemeProvider } from '@mui/system';
 import { createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,7 +12,7 @@ import TopNavbar from './components/TopNavbar';
 import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { useHistory, Route, Switch } from 'react-router-dom';
 
 function App(): JSX.Element {
     const theme: Theme = createTheme({
@@ -28,41 +30,48 @@ function App(): JSX.Element {
         }
     });
 
+    const history = useHistory();
+    const [path, setPath] = useState(window.location.pathname);
+
+    useEffect(() => {
+        return history.listen(location => {
+            setPath(location.pathname);
+        });
+    }, [history]);
+
     return (
         <>
             <CssBaseline />
 
             <div className="app">
-                <Router>
-                    <ThemeProvider theme={theme}>
-                        <TopNavbar />
+                <ThemeProvider theme={theme}>
+                    <TopNavbar />
 
-                        <Switch>
-                            <Route exact path="/about">
-                                <section className="main">
-                                    <About />
-                                </section>
-                            </Route>
-                            <Route exact path="/contact">
-                                <section className="main">
-                                    <Contact />
-                                </section>
-                            </Route>
-                            <Route exact path="/projects">
-                                <section className="main">
-                                    <Projects />
-                                </section>
-                            </Route>
-                            <Route>
-                                <section className="main">
-                                    <Home />
-                                </section>
-                            </Route>
-                        </Switch>
+                    <Switch>
+                        <Route exact path="/about">
+                            <section className="main">
+                                <About />
+                            </section>
+                        </Route>
+                        <Route exact path="/contact">
+                            <section className="main">
+                                <Contact />
+                            </section>
+                        </Route>
+                        <Route exact path="/projects">
+                            <section className="main">
+                                <Projects />
+                            </section>
+                        </Route>
+                        <Route>
+                            <section className="main">
+                                <Home />
+                            </section>
+                        </Route>
+                    </Switch>
 
-                        <BottomNavbar />
-                    </ThemeProvider>
-                </Router>
+                    <BottomNavbar currentPath={path} />
+                </ThemeProvider>
             </div>
         </>
     );
