@@ -48,7 +48,7 @@ const TopNavbar: React.FC = () => {
 
     return (
         <ElevationScroll>
-            <AppBar position="fixed">
+            <AppBar position="fixed" sx={{ transition: 'all 0.3s ease' }}>
                 <Container maxWidth="xl">
                     <Toolbar
                         id={toolbarId}
