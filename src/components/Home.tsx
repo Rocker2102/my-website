@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
-import { CONTACT_POINTS } from '../shared/utils';
+import { CONTACT_POINTS } from '../shared/contactData';
 
 interface CustomLinkProps {
     href?: string;

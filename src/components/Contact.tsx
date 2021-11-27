@@ -7,7 +7,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
-import { CONTACT_POINTS } from '../shared/utils';
+import { CONTACT_POINTS } from '../shared/contactData';
 
 const ContactRowItem: React.FC<typeof CONTACT_POINTS[number]> = Props => {
     const Item = styled(Paper)(({ theme }) => ({

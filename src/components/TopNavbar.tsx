@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import logo from '../logo.svg';
-import { ROUTES } from '../shared/utils';
+import { ROUTES } from '../shared/routeData';
 import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
 

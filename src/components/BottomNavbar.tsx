@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
-import { ROUTES } from '../shared/utils';
+import { ROUTES } from '../shared/routeData';
 import { useHistory } from 'react-router-dom';
 
 interface BottomNavbarProps {
