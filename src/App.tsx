@@ -12,6 +12,7 @@ import TopNavbar from './components/TopNavbar';
 import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
+import { ROUTES } from './shared/utils';
 import { useHistory, Route, Switch } from 'react-router-dom';
 
 function App(): JSX.Element {
@@ -34,7 +35,15 @@ function App(): JSX.Element {
     const [path, setPath] = useState(window.location.pathname);
 
     useEffect(() => {
+        const titleTag = document.getElementsByTagName('title')[0];
+        const prefix = 'Ankush Yadav - ';
+
         return history.listen(location => {
+            const { name } = ROUTES.find(
+                route => route.path === location.pathname
+            ) as typeof ROUTES[number];
+            titleTag.innerText = `${prefix}${name.charAt(0).toUpperCase() + name.substring(1)}`;
+
             setPath(location.pathname);
         });
     }, [history]);
