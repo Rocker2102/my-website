@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import TopNavbar from './components/TopNavbar';
+import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
@@ -58,6 +59,8 @@ function App(): JSX.Element {
                                 </section>
                             </Route>
                         </Switch>
+
+                        <BottomNavbar />
                     </ThemeProvider>
                 </Router>
             </div>
