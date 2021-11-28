@@ -45,18 +45,27 @@ const Home: React.FC = () => {
         <Grow in={true} timeout={150}>
             <ContentBox>
                 <Typography
+                    variant="h5"
+                    fontWeight={500}
+                    color="text.primary"
+                    fontFamily="LexendDeca"
+                    align="left"
+                >
+                    Hiii 👋, I&apos;m
+                </Typography>
+                <Typography
                     variant="h2"
                     color="text.primary"
                     fontWeight={500}
                     fontFamily="LexendDeca"
                 >
-                    Hiii 👋, I&apos;m Ankush Yadav
+                    Ankush Yadav
                 </Typography>
                 <Typography
                     variant="h4"
                     color="primary"
-                    mt={3}
-                    pb={4}
+                    mt={2.5}
+                    mb={4}
                     fontFamily="LexendDeca Light"
                 >
                     Student &amp; Full-Stack Web Developer
@@ -65,7 +74,7 @@ const Home: React.FC = () => {
                 <Stack
                     direction="row"
                     spacing={3}
-                    mt={5}
+                    pt={5}
                     justifyContent="center"
                     alignItems="center"
                     divider={<Divider orientation="vertical" flexItem />}
