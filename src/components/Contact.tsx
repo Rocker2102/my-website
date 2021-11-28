@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>
-                <Box mt={4}>
+                <Box>
                     <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
                         Contact Info
                     </Typography>
