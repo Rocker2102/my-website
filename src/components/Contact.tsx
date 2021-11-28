@@ -25,29 +25,24 @@ const ContactRowItem: React.FC<typeof CONTACT_POINTS[number]> = Props => {
     return (
         <Grid item xs={12} md={6}>
             <Link href={Props.href} target="_blank" sx={{ textDecoration: 'none' }}>
-                <Item elevation={7}>
-                    <Box display="flex" alignItems="center">
-                        <Stack
-                            direction="row"
-                            spacing={{ xs: 1, sm: 2, md: 4 }}
-                            alignItems="center"
-                        >
-                            <Props.Icon fontSize="large" />
-                            <div style={{ textAlign: 'left' }}>
-                                <Typography variant="h6" fontWeight={500} fontFamily="LexendDeca">
-                                    {Props.name}
-                                </Typography>
-                                <Typography
-                                    variant="subtitle1"
-                                    fontWeight={400}
-                                    fontFamily="LexendDeca Light"
-                                    display={{ xs: 'none', sm: 'block' }}
-                                >
-                                    {Props.username ?? '-'}
-                                </Typography>
-                            </div>
-                        </Stack>
-                    </Box>
+                <Item elevation={7} sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }} alignItems="center">
+                        <Props.Icon fontSize="large" />
+
+                        <div style={{ textAlign: 'left' }}>
+                            <Typography variant="h6" fontWeight={500} fontFamily="LexendDeca">
+                                {Props.name}
+                            </Typography>
+                            <Typography
+                                variant="subtitle1"
+                                fontWeight={400}
+                                fontFamily="LexendDeca Light"
+                                display={{ xs: 'none', sm: 'block' }}
+                            >
+                                {Props.username ?? '-'}
+                            </Typography>
+                        </div>
+                    </Stack>
                 </Item>
             </Link>
         </Grid>
