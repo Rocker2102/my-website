@@ -89,6 +89,7 @@ const TopNavbar: React.FC = () => {
                             {ROUTES.map(({ name, path }) => (
                                 <CustomLink
                                     key={name}
+                                    className="header-links"
                                     onClick={() => history.push(path)}
                                     sx={{
                                         mx: 3,
@@ -99,6 +100,13 @@ const TopNavbar: React.FC = () => {
                                     }}
                                 >
                                     {name}
+
+                                    {/*
+                                        Below div is used to add underline below link on hover.
+                                        '.header-links', '.link-underline' css classes are
+                                        defined in App.css
+                                     */}
+                                    <div className="link-underline"></div>
                                 </CustomLink>
                             ))}
                         </Box>
