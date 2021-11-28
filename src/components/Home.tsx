@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import Grow from '@mui/material/Grow';
-import Link from '@mui/material/Link';
+import Link, { LinkProps } from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
@@ -10,9 +10,7 @@ import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
 import { CONTACT_POINTS } from '../shared/contactData';
 
-interface CustomLinkProps {
-    href?: string;
-    target?: string;
+interface CustomLinkProps extends LinkProps {
     activeColor?: string;
 }
 
