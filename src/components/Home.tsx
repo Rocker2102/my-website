@@ -48,6 +48,7 @@ const Home: FC = () => {
                     color="text.primary"
                     fontFamily="LexendDeca"
                     align="left"
+                    pl={{ xs: 1, sm: 0 }}
                 >
                     Hiii 👋, I&apos;m
                 </Typography>
