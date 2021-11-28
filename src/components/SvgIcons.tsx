@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
@@ -10,14 +10,14 @@ import { ReactComponent as LinkedInSVG } from '../icons/linkedin.svg';
 import { ReactComponent as TelegramSVG } from '../icons/telegram.svg';
 import { ReactComponent as WhatsAppSVG } from '../icons/whatsapp.svg';
 
-export const AtIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const AtIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <AtSVG />
         </SvgIcon>
     );
 };
-export const GitHubIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const GitHubIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <GitHubSVG />
@@ -25,7 +25,7 @@ export const GitHubIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
     );
 };
 
-export const FacebookIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const FacebookIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <FacebookSVG />
@@ -33,7 +33,7 @@ export const FacebookIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
     );
 };
 
-export const LinkedInIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const LinkedInIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <LinkedInSVG />
@@ -41,7 +41,7 @@ export const LinkedInIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
     );
 };
 
-export const TelegramIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const TelegramIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <TelegramSVG />
@@ -49,7 +49,7 @@ export const TelegramIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
     );
 };
 
-export const TwitterIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const TwitterIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <TwitterSVG />
@@ -57,7 +57,7 @@ export const TwitterIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
     );
 };
 
-export const WhatsAppIcon: React.FC<SvgIconProps> = (props: SvgIconProps) => {
+export const WhatsAppIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
     return (
         <SvgIcon {...props}>
             <WhatsAppSVG />

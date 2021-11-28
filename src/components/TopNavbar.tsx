@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, FC } from 'react';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -16,14 +16,14 @@ import { useHistory } from 'react-router-dom';
 
 const toolbarId = 'app-root-toolbar';
 
-const ElevationScroll: React.FC = ({ children }) => {
+const ElevationScroll: FC = ({ children }) => {
     const trigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: 0,
         target: window
     });
 
-    return React.cloneElement(children as JSX.Element, {
+    return cloneElement(children as JSX.Element, {
         elevation: trigger ? 4 : 0
     });
 };
@@ -43,7 +43,7 @@ const CustomLink = styled(Link)(({ theme }) => ({
     }
 }));
 
-const TopNavbar: React.FC = () => {
+const TopNavbar: FC = () => {
     const history = useHistory();
 
     return (

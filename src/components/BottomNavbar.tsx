@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, FC, SyntheticEvent } from 'react';
 
 import Paper from '@mui/material/Paper';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -11,13 +11,13 @@ interface BottomNavbarProps {
     currentPath: string;
 }
 
-const BottomNavbar: React.FC<BottomNavbarProps> = ({ currentPath }) => {
+const BottomNavbar: FC<BottomNavbarProps> = ({ currentPath }) => {
     const history = useHistory();
-    const [path, setPath] = React.useState(currentPath);
+    const [path, setPath] = useState(currentPath);
 
     currentPath !== path ? setPath(currentPath) : false;
 
-    const handleChange = (event: React.SyntheticEvent, newPath: string) => {
+    const handleChange = (event: SyntheticEvent, newPath: string) => {
         setPath(newPath);
         newPath !== currentPath ? history.push(newPath) : false;
     };

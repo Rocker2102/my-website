@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import Grid from '@mui/material/Grid';
@@ -10,7 +12,7 @@ import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
 import { CONTACT_POINTS } from '../shared/contactData';
 
-const ContactRowItem: React.FC<typeof CONTACT_POINTS[number]> = Props => {
+const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = Props => {
     const Item = styled(Paper)(({ theme }) => ({
         padding: `${theme.spacing(4)} ${theme.spacing(4)}`,
         color: theme.palette.text.secondary,
@@ -49,7 +51,7 @@ const ContactRowItem: React.FC<typeof CONTACT_POINTS[number]> = Props => {
     );
 };
 
-const Contact: React.FC = () => {
+const Contact: FC = () => {
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>

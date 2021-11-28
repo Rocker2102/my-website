@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC } from 'react';
 
 import Grow from '@mui/material/Grow';
 import Link, { LinkProps } from '@mui/material/Link';
@@ -14,7 +14,7 @@ interface CustomLinkProps extends LinkProps {
     activeColor?: string;
 }
 
-const CustomLink: React.FC<CustomLinkProps> = props => {
+const CustomLink: FC<CustomLinkProps> = props => {
     /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     const Tmp = styled(Link)(({ theme }) => ({
         cursor: 'pointer',
@@ -38,7 +38,7 @@ const CustomLink: React.FC<CustomLinkProps> = props => {
     return <Tmp {...newProps}>{props.children}</Tmp>;
 };
 
-const Home: React.FC = () => {
+const Home: FC = () => {
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>

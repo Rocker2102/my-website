@@ -1,10 +1,12 @@
+import { FC } from 'react';
+
 import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import Typography from '@mui/material/Typography';
 
 import ContentBox from './ContentBox';
 
-const Projects: React.FC = () => {
+const Projects: FC = () => {
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>
