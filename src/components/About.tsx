@@ -6,6 +6,7 @@ import Grow from '@mui/material/Grow';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
+import Title from './Title';
 import ContentBox from './ContentBox';
 import { FONTS, USER_DATA } from '../shared/appSettings';
 import { PRIMARY_INFO, PROFILE_IMG } from '../shared/aboutData';
@@ -21,9 +22,7 @@ const About: FC = () => {
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>
-                <Typography variant="h2" color="primary" fontWeight={500} fontFamily={FONTS.title}>
-                    About Me
-                </Typography>
+                <Title>About Me</Title>
 
                 <Box mt={4}>
                     <Grid container spacing={4}>

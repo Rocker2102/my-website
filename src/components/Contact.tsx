@@ -8,6 +8,8 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
+import Title from './Title';
+import Subtitle from './Subtitle';
 import ContentBox from './ContentBox';
 import { FONTS } from '../shared/appSettings';
 import { styled } from '@mui/material/styles';
@@ -57,17 +59,8 @@ const Contact: FC = () => {
         <Grow in={true} timeout={150}>
             <ContentBox>
                 <Box>
-                    <Typography
-                        variant="h2"
-                        color="primary"
-                        fontWeight={500}
-                        fontFamily={FONTS.title}
-                    >
-                        Contact Info
-                    </Typography>
-                    <Typography variant="h4" color="text.primary" fontFamily={FONTS.para}>
-                        How would you like to get in touch? 😊
-                    </Typography>
+                    <Title>Contact Info</Title>
+                    <Subtitle>How would you like to get in touch? 😊</Subtitle>
                 </Box>
                 <Box mt={{ xs: 4, md: 6, lg: 7 }}>
                     <Grid container spacing={{ xs: 0.5, sm: 1, md: 2, lg: 3 }} rowSpacing={2}>
