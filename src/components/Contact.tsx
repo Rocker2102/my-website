@@ -11,8 +11,8 @@ import Typography from '@mui/material/Typography';
 import Title from './Title';
 import Subtitle from './Subtitle';
 import ContentBox from './ContentBox';
-import { FONTS } from '../shared/appSettings';
 import { styled } from '@mui/material/styles';
+import { FONTS } from '../shared/appSettings';
 import { CONTACT_POINTS } from '../shared/contactData';
 
 const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = Props => {

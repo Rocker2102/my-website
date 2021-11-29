@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
 import Grow from '@mui/material/Grow';
-import Link, { LinkProps } from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
+import Link, { LinkProps } from '@mui/material/Link';
 
 import ContentBox from './ContentBox';
-import { FONTS } from '../shared/appSettings';
 import { styled } from '@mui/material/styles';
+import { FONTS } from '../shared/appSettings';
 import { CONTACT_POINTS } from '../shared/contactData';
 
 interface CustomLinkProps extends LinkProps {
