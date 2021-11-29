@@ -4,14 +4,16 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Grow from '@mui/material/Grow';
 import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import Title from './Title';
 import ContentBox from './ContentBox';
 import { useHistory } from 'react-router-dom';
 import { FONTS, USER_DATA } from '../shared/appSettings';
-import { PRIMARY_INFO, PROFILE_IMG } from '../shared/aboutData';
+import { PRIMARY_INFO, PROFILE_IMG, SECONDARY_INFO } from '../shared/aboutData';
 
 /**
  * Dimension & units of display picture
@@ -19,6 +21,12 @@ import { PRIMARY_INFO, PROFILE_IMG } from '../shared/aboutData';
  */
 const imgSize = 30;
 const imgUnit = 'vh';
+
+const dpSxProp = {
+    xs: `${imgSize - 6}${imgUnit}`,
+    sm: `${imgSize - 2}${imgUnit}`,
+    md: `${imgSize}${imgUnit}`
+};
 
 const About: FC = () => {
     const history = useHistory();
@@ -35,8 +43,8 @@ const About: FC = () => {
                                 src={PROFILE_IMG}
                                 alt={USER_DATA.name}
                                 sx={{
-                                    width: `${imgSize}${imgUnit}`,
-                                    height: `${imgSize}${imgUnit}`
+                                    width: dpSxProp,
+                                    height: dpSxProp
                                 }}
                             />
                         </Grid>
@@ -54,7 +62,7 @@ const About: FC = () => {
                                     variant="h5"
                                     fontFamily={FONTS.para}
                                 >
-                                    {text}.
+                                    {text};
                                 </Typography>
                             ))}
 
@@ -66,6 +74,7 @@ const About: FC = () => {
                             >
                                 Want to know more?{' '}
                                 <Link
+                                    rel="noopener"
                                     underline="hover"
                                     onClick={() => history.push('/connect')}
                                     style={{ cursor: 'pointer' }}
@@ -76,10 +85,49 @@ const About: FC = () => {
                                 <Link href={USER_DATA.resume} underline="hover">
                                     download my Resume
                                 </Link>
-                                .
+                                ;
                             </Typography>
                         </Grid>
                     </Grid>
+
+                    <Stack
+                        mt={4}
+                        direction={{ xs: 'column', sm: 'row' }}
+                        spacing={3}
+                        justifyContent="space-between"
+                        alignItems="start"
+                        divider={<Divider orientation="vertical" flexItem />}
+                    >
+                        {Object.keys(SECONDARY_INFO).map(
+                            (title: keyof typeof SECONDARY_INFO, i: number) => (
+                                <Box
+                                    key={title}
+                                    textAlign={{ xs: 'center', sm: i % 2 === 0 ? 'left' : 'right' }}
+                                >
+                                    <Typography
+                                        mb={1}
+                                        color="secondary"
+                                        variant="h5"
+                                        fontFamily={FONTS.general}
+                                        sx={{ textTransform: 'capitalize' }}
+                                    >
+                                        {title};
+                                    </Typography>
+                                    {SECONDARY_INFO[title].map((listItem, i) => (
+                                        <Typography
+                                            key={i}
+                                            mb={2}
+                                            color="text.secondary"
+                                            variant="h6"
+                                            fontFamily={FONTS.para}
+                                        >
+                                            - {listItem};
+                                        </Typography>
+                                    ))}
+                                </Box>
+                            )
+                        )}
+                    </Stack>
                 </Box>
             </ContentBox>
         </Grow>
