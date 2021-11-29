@@ -11,8 +11,14 @@ export const PRIMARY_INFO = [
 export const SECONDARY_INFO: {
     [key: string]: string[];
 } = {
-    'hobbies & interests': [`Fan of fantasy, action & adventure movies`],
-    'technical knowledge': []
+    'hobbies & interests': [
+        `Fan of fantasy, action & adventure movies`,
+        'Some random data just for visualization purpose '
+    ],
+    'technical knowledge': [
+        'Some random data just for visualization purpose which is supposedly long',
+        'Some random data just for visualization purpose'
+    ]
 };
 /* eslint-enable */
 

@@ -100,9 +100,12 @@ const About: FC = () => {
                     >
                         {Object.keys(SECONDARY_INFO).map(
                             (title: keyof typeof SECONDARY_INFO, i: number) => (
-                                <Box
+                                <Grid
+                                    item
                                     key={title}
+                                    sm={6}
                                     textAlign={{ xs: 'center', sm: i % 2 === 0 ? 'left' : 'right' }}
+                                    margin="auto"
                                 >
                                     <Typography
                                         mb={1}
@@ -124,7 +127,7 @@ const About: FC = () => {
                                             - {listItem};
                                         </Typography>
                                     ))}
-                                </Box>
+                                </Grid>
                             )
                         )}
                     </Stack>
