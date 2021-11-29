@@ -3,11 +3,13 @@ import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Grow from '@mui/material/Grow';
+import Link from '@mui/material/Link';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
 import Title from './Title';
 import ContentBox from './ContentBox';
+import { useHistory } from 'react-router-dom';
 import { FONTS, USER_DATA } from '../shared/appSettings';
 import { PRIMARY_INFO, PROFILE_IMG } from '../shared/aboutData';
 
@@ -19,6 +21,8 @@ const imgSize = 30;
 const imgUnit = 'vh';
 
 const About: FC = () => {
+    const history = useHistory();
+
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>
@@ -53,6 +57,22 @@ const About: FC = () => {
                                     {text}.
                                 </Typography>
                             ))}
+
+                            <Typography
+                                mb={2}
+                                color="text.primary"
+                                variant="h5"
+                                fontFamily={FONTS.para}
+                            >
+                                Want to know more?{' '}
+                                <Link
+                                    underline="hover"
+                                    onClick={() => history.push('/connect')}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    Connect now! 😁
+                                </Link>
+                            </Typography>
                         </Grid>
                     </Grid>
                 </Box>
