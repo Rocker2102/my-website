@@ -22,5 +22,5 @@ export const ROUTES: {
     { name: 'home', path: '/home', exact: false, Icon: HomeIcon },
     { name: 'projects', path: '/projects', exact: true, Icon: WorkIcon },
     { name: 'about', path: '/about', exact: true, Icon: InfoIcon },
-    { name: 'contact', path: '/contact', exact: true, Icon: PersonIcon }
+    { name: 'connect', path: '/connect', exact: true, Icon: PersonIcon }
 ];
