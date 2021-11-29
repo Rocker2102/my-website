@@ -70,8 +70,13 @@ const About: FC = () => {
                                     onClick={() => history.push('/connect')}
                                     style={{ cursor: 'pointer' }}
                                 >
-                                    Connect now! 😁
+                                    Connect now
                                 </Link>
+                                &nbsp;or&nbsp;
+                                <Link href={USER_DATA.resume} underline="hover">
+                                    download my Resume
+                                </Link>
+                                .
                             </Typography>
                         </Grid>
                     </Grid>

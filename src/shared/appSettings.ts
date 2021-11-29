@@ -6,5 +6,9 @@ export const FONTS = {
 };
 
 export const USER_DATA = {
-    name: 'Ankush Yadav'
+    name: 'Ankush Yadav',
+    /**
+     * The link can be absolute or relative from the 'public/' directory
+     */
+    resume: 'resources/resume.pdf'
 };
