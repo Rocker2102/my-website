@@ -77,6 +77,7 @@ const Home: FC = () => {
                         showOnHome ? (
                             <CustomLink
                                 key={name}
+                                rel="noopener"
                                 href={href}
                                 target="_blank"
                                 activeColor={activeColor}

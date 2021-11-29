@@ -29,7 +29,7 @@ const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = Props => {
 
     return (
         <Grid item xs={12} md={6}>
-            <Link href={Props.href} target="_blank" sx={{ textDecoration: 'none' }}>
+            <Link href={Props.href} rel="noopener" target="_blank" sx={{ textDecoration: 'none' }}>
                 <Item elevation={7} sx={{ display: 'flex', alignItems: 'center' }}>
                     <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }} alignItems="center">
                         <Props.Icon fontSize="large" />
