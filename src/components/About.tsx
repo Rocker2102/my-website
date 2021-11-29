@@ -7,6 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
 import ContentBox from './ContentBox';
+import { FONTS, USER_DATA } from '../shared/appSettings';
 import { PRIMARY_INFO, PROFILE_IMG } from '../shared/aboutData';
 
 /**
@@ -20,7 +21,7 @@ const About: FC = () => {
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>
-                <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
+                <Typography variant="h2" color="primary" fontWeight={500} fontFamily={FONTS.title}>
                     About Me
                 </Typography>
 
@@ -29,7 +30,7 @@ const About: FC = () => {
                         <Grid item textAlign="center" margin="auto">
                             <Avatar
                                 src={PROFILE_IMG}
-                                alt="Ankush Yadav"
+                                alt={USER_DATA.name}
                                 sx={{
                                     width: `${imgSize}${imgUnit}`,
                                     height: `${imgSize}${imgUnit}`
@@ -48,7 +49,7 @@ const About: FC = () => {
                                     mb={2}
                                     color="text.primary"
                                     variant="h5"
-                                    fontFamily="LexendDeca Light"
+                                    fontFamily={FONTS.para}
                                 >
                                     {text}.
                                 </Typography>

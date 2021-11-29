@@ -7,6 +7,7 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import ContentBox from './ContentBox';
+import { FONTS } from '../shared/appSettings';
 import { styled } from '@mui/material/styles';
 import { CONTACT_POINTS } from '../shared/contactData';
 
@@ -46,7 +47,7 @@ const Home: FC = () => {
                     variant="h5"
                     fontWeight={500}
                     color="text.primary"
-                    fontFamily="LexendDeca"
+                    fontFamily={FONTS.general}
                     align="left"
                     pl={{ xs: 1, sm: 0 }}
                 >
@@ -56,17 +57,11 @@ const Home: FC = () => {
                     variant="h2"
                     color="text.primary"
                     fontWeight={500}
-                    fontFamily="LexendDeca"
+                    fontFamily={FONTS.general}
                 >
                     Ankush Yadav
                 </Typography>
-                <Typography
-                    variant="h4"
-                    color="primary"
-                    mt={2.5}
-                    mb={4}
-                    fontFamily="LexendDeca Light"
-                >
+                <Typography variant="h4" color="primary" mt={2.5} mb={4} fontFamily={FONTS.para}>
                     Student &amp; Full-Stack Web Developer
                 </Typography>
 

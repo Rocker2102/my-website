@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 import ContentBox from './ContentBox';
+import { FONTS } from '../shared/appSettings';
 import { styled } from '@mui/material/styles';
 import { CONTACT_POINTS } from '../shared/contactData';
 
@@ -32,13 +33,13 @@ const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = Props => {
                         <Props.Icon fontSize="large" />
 
                         <div style={{ textAlign: 'left' }}>
-                            <Typography variant="h6" fontWeight={500} fontFamily="LexendDeca">
+                            <Typography variant="h6" fontWeight={500} fontFamily={FONTS.general}>
                                 {Props.name}
                             </Typography>
                             <Typography
                                 variant="subtitle1"
                                 fontWeight={400}
-                                fontFamily="LexendDeca Light"
+                                fontFamily={FONTS.para}
                                 display={{ xs: 'none', sm: 'block' }}
                             >
                                 {Props.username ?? '-'}
@@ -56,10 +57,15 @@ const Contact: FC = () => {
         <Grow in={true} timeout={150}>
             <ContentBox>
                 <Box>
-                    <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
+                    <Typography
+                        variant="h2"
+                        color="primary"
+                        fontWeight={500}
+                        fontFamily={FONTS.title}
+                    >
                         Contact Info
                     </Typography>
-                    <Typography variant="h4" color="text.primary" fontFamily="LexendDeca Light">
+                    <Typography variant="h4" color="text.primary" fontFamily={FONTS.para}>
                         How would you like to get in touch? 😊
                     </Typography>
                 </Box>
