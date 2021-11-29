@@ -7,22 +7,14 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
 import ContentBox from './ContentBox';
-import profileImg from '../shared/profile.jpg';
+import { PRIMARY_INFO, PROFILE_IMG } from '../shared/aboutData';
 
 /**
- * Display picture dimension & units
+ * Dimension & units of display picture
  * (use a 1:1 ratio picture for best results)
  */
-const imgSize = 30,
-    imgUnit = 'vh';
-
-/* eslint-disable */
-const MainInfo = [
-    `I'm a full-stack web developer (mostly self-taught) and a student from Lucknow, India`,
-    `I'm currently building (and learning of course 😅), a cross-platform desktop application
-        using Electron.js & React`
-];
-/* eslint-enable */
+const imgSize = 30;
+const imgUnit = 'vh';
 
 const About: FC = () => {
     return (
@@ -33,10 +25,10 @@ const About: FC = () => {
                 </Typography>
 
                 <Box mt={4}>
-                    <Grid container spacing={3}>
+                    <Grid container spacing={4}>
                         <Grid item textAlign="center" margin="auto">
                             <Avatar
-                                src={profileImg}
+                                src={PROFILE_IMG}
                                 alt="Ankush Yadav"
                                 sx={{
                                     width: `${imgSize}${imgUnit}`,
@@ -46,16 +38,16 @@ const About: FC = () => {
                         </Grid>
                         <Grid
                             item
-                            margin={{ xs: 'auto', md: 'initial' }}
+                            margin={{ xs: 'auto', sm: 'initial' }}
                             maxWidth={{ xs: 'initial', sm: '50vw' }}
-                            textAlign={{ xs: 'center', md: 'left' }}
+                            textAlign={{ xs: 'center', sm: 'left' }}
                         >
-                            {MainInfo.map((text, i) => (
+                            {PRIMARY_INFO.map((text: string, i: number) => (
                                 <Typography
                                     key={i}
                                     mb={2}
-                                    variant="h5"
                                     color="text.primary"
+                                    variant="h5"
                                     fontFamily="LexendDeca Light"
                                 >
                                     {text}.
