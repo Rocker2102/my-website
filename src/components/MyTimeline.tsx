@@ -9,86 +9,60 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
 import Typography from '@mui/material/Typography';
-import CakeIcon from '@mui/icons-material/CakeOutlined';
+import EventIcon from '@mui/icons-material/EventOutlined';
+import { useTheme, Palette, PaletteColor } from '@mui/material/styles';
+
+import { FONTS } from '../shared/appSettings';
+import { TIMELINE_INFO } from '../shared/aboutData';
 
 const MyTimeline: FC = () => {
+    const theme = useTheme();
+
     return (
         <Timeline position="alternate">
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: 'auto 0' }}
-                    align="right"
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    9:30 am
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot>
-                        <CakeIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Eat
-                    </Typography>
-                    <Typography>Because you need strength</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: 'auto 0' }}
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    10:00 am
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <CakeIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Code
-                    </Typography>
-                    <Typography>Because it&apos;s awesome!</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary" variant="outlined">
-                        <CakeIcon />
-                    </TimelineDot>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Sleep
-                    </Typography>
-                    <Typography>Because you need rest</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                    <TimelineDot color="secondary">
-                        <CakeIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Repeat
-                    </Typography>
-                    <Typography>Because this is the life you love!</Typography>
-                </TimelineContent>
-            </TimelineItem>
+            {TIMELINE_INFO.map((entry, i) => {
+                return (
+                    <TimelineItem key={i}>
+                        <TimelineOppositeContent
+                            sx={{ m: 'auto 0' }}
+                            align="right"
+                            variant="body2"
+                            color="text.secondary"
+                            fontFamily={FONTS.para}
+                        >
+                            {`${entry.date}${entry.place ? ', ' + entry.place : ''}`}
+                        </TimelineOppositeContent>
+
+                        <TimelineSeparator>
+                            <TimelineConnector sx={{ bgcolor: theme.palette.secondary.main }} />
+                            <TimelineDot color="warning">
+                                {entry.Icon ? <entry.Icon /> : <EventIcon />}
+                            </TimelineDot>
+                            <TimelineConnector sx={{ bgcolor: theme.palette.secondary.main }} />
+                        </TimelineSeparator>
+
+                        <TimelineContent sx={{ py: entry.description ? '12px' : '16px', px: 2 }}>
+                            <Typography
+                                variant="h6"
+                                color={
+                                    (
+                                        theme.palette[
+                                            (entry?.titleColor ?? 'primary') as keyof Palette
+                                        ] as PaletteColor
+                                    ).main
+                                }
+                                component="span"
+                                fontFamily={FONTS.title}
+                            >
+                                {entry.title}
+                            </Typography>
+                            <Typography color="text.primary" fontFamily={FONTS.para}>
+                                {entry?.description}
+                            </Typography>
+                        </TimelineContent>
+                    </TimelineItem>
+                );
+            })}
         </Timeline>
     );
 };
