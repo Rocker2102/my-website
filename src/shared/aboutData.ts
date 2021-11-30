@@ -31,8 +31,7 @@ export const TIMELINE_INFO: {
     date: string;
     title: string;
     place?: string;
-    iconbg?: string;
-    titleColor?: string;
+    titleColor?: 'error' | 'warning' | 'info' | 'success' | 'primary' | 'secondary';
     description?: string;
     Icon?: FC;
 }[] = [
@@ -64,6 +63,7 @@ export const TIMELINE_INFO: {
         date: 'August 2018',
         title: 'Joined College',
         place: 'Sikkim',
+        titleColor: 'success',
         description: 'National Institute of Technology, Sikkim'
     },
     {
@@ -81,7 +81,8 @@ export const TIMELINE_INFO: {
     {
         date: '29 September 2000',
         title: 'Birthday',
-        place: 'Mumbai'
+        place: 'Mumbai',
+        titleColor: 'success'
     }
 ];
 
