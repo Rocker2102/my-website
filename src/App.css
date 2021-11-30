@@ -38,13 +38,28 @@
 section.main {
     background-color: #202122;
     min-height: 100vh;
-    /**
-     * Fixed (max) height of TopNavbar: 64px
-     * Fixed height of BottomNavbar: 56px
-     */
-    padding: 80px 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+div.link-underline {
+    width: 0;
+    height: 2.5px;
+    margin-top: 0.1em;
+    border-radius: 3px;
+    background-color: #90CAF9;
+    transition: width 0.3s ease;
+}
+
+.header-links:hover div.link-underline {
+    animation: header-link-hover-animation 0.3s ease forwards;
+}
+
+@keyframes header-link-hover-animation {
+    100% {
+        width: 100%;
+        background-color: #0056B3;
+    }
 }

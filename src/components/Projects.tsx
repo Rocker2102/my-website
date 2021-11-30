@@ -1,21 +1,22 @@
+import { FC } from 'react';
+
 import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
-import Typography from '@mui/material/Typography';
 
-const Projects: React.FC = () => {
+import Title from './Title';
+import Subtitle from './Subtitle';
+import ContentBox from './ContentBox';
+
+const Projects: FC = () => {
     return (
         <Grow in={true} timeout={150}>
-            <Box>
-                <Typography variant="h2" color="primary" fontWeight={500} fontFamily="Raleway">
-                    My Projects
-                </Typography>
+            <ContentBox>
+                <Title>My Projects</Title>
 
                 <Box>
-                    <Typography variant="h4" color="text.primary" fontFamily="LexendDeca Light">
-                        Under development
-                    </Typography>
+                    <Subtitle>Under development</Subtitle>
                 </Box>
-            </Box>
+            </ContentBox>
         </Grow>
     );
 };

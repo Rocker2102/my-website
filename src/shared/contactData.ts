@@ -1,10 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { SvgIconProps } from '@mui/material';
-import HomeIcon from '@mui/icons-material/HomeRounded';
-import InfoIcon from '@mui/icons-material/InfoOutlined';
-import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
-import PersonIcon from '@mui/icons-material/PersonOutlineRounded';
 
 import {
     AtIcon,
@@ -17,31 +13,12 @@ import {
 } from '../components/SvgIcons';
 
 /**
- * App route names & paths
- */
-export const ROUTES: {
-    name: string;
-    path: string;
-    Icon: React.FC<SvgIconProps>;
-    /**
-     * Whether the path is to be matched exactly or not
-     * (not in use currently, may be removed in the future)
-     */
-    exact: boolean;
-}[] = [
-    { name: 'home', path: '/home', exact: false, Icon: HomeIcon },
-    { name: 'projects', path: '/projects', exact: true, Icon: WorkIcon },
-    { name: 'about', path: '/about', exact: true, Icon: InfoIcon },
-    { name: 'contact', path: '/contact', exact: true, Icon: PersonIcon }
-];
-
-/**
  * Personal contact points (social sites)
  */
 export const CONTACT_POINTS: {
     name: string;
     href: string;
-    Icon: React.FC<SvgIconProps>;
+    Icon: FC<SvgIconProps>;
     username?: string;
     /**
      * Whether to show this contact point on home page
@@ -99,7 +76,7 @@ export const CONTACT_POINTS: {
         username: '@rocker2102',
         showOnHome: true,
         activeColor: '#0088CC',
-        showOnContact: false
+        showOnContact: true
     },
     {
         name: 'Twitter',
@@ -117,6 +94,6 @@ export const CONTACT_POINTS: {
         username: '+91 95892 03992',
         showOnHome: false,
         activeColor: '#4AC959',
-        showOnContact: true
+        showOnContact: false
     }
 ];

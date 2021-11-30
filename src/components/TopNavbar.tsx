@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, FC } from 'react';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -10,20 +10,20 @@ import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import logo from '../logo.svg';
-import { ROUTES } from '../shared/utils';
+import { ROUTES } from '../shared/routeData';
 import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
 
 const toolbarId = 'app-root-toolbar';
 
-const ElevationScroll: React.FC = ({ children }) => {
+const ElevationScroll: FC = ({ children }) => {
     const trigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: 0,
         target: window
     });
 
-    return React.cloneElement(children as JSX.Element, {
+    return cloneElement(children as JSX.Element, {
         elevation: trigger ? 4 : 0
     });
 };
@@ -43,7 +43,7 @@ const CustomLink = styled(Link)(({ theme }) => ({
     }
 }));
 
-const TopNavbar: React.FC = () => {
+const TopNavbar: FC = () => {
     const history = useHistory();
 
     return (
@@ -85,10 +85,11 @@ const TopNavbar: React.FC = () => {
                             </Typography>
                         </Box>
 
-                        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <Box sx={{ display: { xs: 'none', md: 'inline-flex' } }}>
                             {ROUTES.map(({ name, path }) => (
                                 <CustomLink
                                     key={name}
+                                    className="header-links"
                                     onClick={() => history.push(path)}
                                     sx={{
                                         mx: 3,
@@ -99,6 +100,13 @@ const TopNavbar: React.FC = () => {
                                     }}
                                 >
                                     {name}
+
+                                    {/*
+                                        Below div is used to add underline below link on hover.
+                                        '.header-links', '.link-underline' css classes are
+                                        defined in App.css
+                                     */}
+                                    <div className="link-underline"></div>
                                 </CustomLink>
                             ))}
                         </Box>

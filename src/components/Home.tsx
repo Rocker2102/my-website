@@ -1,22 +1,21 @@
-import * as React from 'react';
+import { FC } from 'react';
 
-import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
+import Link, { LinkProps } from '@mui/material/Link';
 
+import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
-import { CONTACT_POINTS } from '../shared/utils';
+import { FONTS } from '../shared/appSettings';
+import { CONTACT_POINTS } from '../shared/contactData';
 
-interface CustomLinkProps {
-    href?: string;
-    target?: string;
+interface CustomLinkProps extends LinkProps {
     activeColor?: string;
 }
 
-const CustomLink: React.FC<CustomLinkProps> = props => {
+const CustomLink: FC<CustomLinkProps> = props => {
     /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     const Tmp = styled(Link)(({ theme }) => ({
         cursor: 'pointer',
@@ -40,32 +39,36 @@ const CustomLink: React.FC<CustomLinkProps> = props => {
     return <Tmp {...newProps}>{props.children}</Tmp>;
 };
 
-const Home: React.FC = () => {
+const Home: FC = () => {
     return (
         <Grow in={true} timeout={150}>
-            <Box>
+            <ContentBox>
+                <Typography
+                    variant="h5"
+                    fontWeight={500}
+                    color="text.primary"
+                    fontFamily={FONTS.general}
+                    align="left"
+                    pl={{ xs: 1, sm: 0 }}
+                >
+                    Hiii 👋, I&apos;m
+                </Typography>
                 <Typography
                     variant="h2"
                     color="text.primary"
                     fontWeight={500}
-                    fontFamily="LexendDeca"
+                    fontFamily={FONTS.general}
                 >
-                    Hiii 👋, I&apos;m Ankush Yadav
+                    Ankush Yadav
                 </Typography>
-                <Typography
-                    variant="h4"
-                    color="primary"
-                    mt={3}
-                    pb={4}
-                    fontFamily="LexendDeca Light"
-                >
+                <Typography variant="h4" color="primary" mt={2.5} mb={4} fontFamily={FONTS.para}>
                     Student &amp; Full-Stack Web Developer
                 </Typography>
 
                 <Stack
                     direction="row"
                     spacing={3}
-                    mt={5}
+                    pt={5}
                     justifyContent="center"
                     alignItems="center"
                     divider={<Divider orientation="vertical" flexItem />}
@@ -74,6 +77,7 @@ const Home: React.FC = () => {
                         showOnHome ? (
                             <CustomLink
                                 key={name}
+                                rel="noopener"
                                 href={href}
                                 target="_blank"
                                 activeColor={activeColor}
@@ -83,7 +87,7 @@ const Home: React.FC = () => {
                         ) : null
                     )}
                 </Stack>
-            </Box>
+            </ContentBox>
         </Grow>
     );
 };
