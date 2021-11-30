@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 
 import Title from './Title';
 import ContentBox from './ContentBox';
+import MyTimeline from './MyTimeline';
 import { useHistory } from 'react-router-dom';
 import { FONTS, USER_DATA } from '../shared/appSettings';
 import { PRIMARY_INFO, PROFILE_IMG, SECONDARY_INFO } from '../shared/aboutData';
@@ -131,6 +132,19 @@ const About: FC = () => {
                             )
                         )}
                     </Stack>
+
+                    <Box mt={4}>
+                        <Typography
+                            mb={2}
+                            color="secondary"
+                            variant="h5"
+                            fontFamily={FONTS.general}
+                        >
+                            My Brief Timeline;
+                        </Typography>
+
+                        <MyTimeline />
+                    </Box>
                 </Box>
             </ContentBox>
         </Grow>
