@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import CakeIcon from '@mui/icons-material/CakeRounded';
 import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
+import TodayIcon from '@mui/icons-material/TodayRounded';
 import SchoolIcon from '@mui/icons-material/SchoolRounded';
 import AutoStoriesIcon from '@mui/icons-material/AutoStoriesRounded';
 
@@ -40,6 +41,13 @@ export const TIMELINE_INFO: {
     description?: string;
     Icon?: FC;
 }[] = [
+    {
+        date: 'November 2021',
+        title: 'Received first (decent) job offer',
+        place: 'Lucknow',
+        titleColor: 'success',
+        Icon: TodayIcon
+    },
     {
         date: 'May 2021 - August 2021',
         title: 'Internship @ DS Legends Pte. Ltd.',
