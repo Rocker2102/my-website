@@ -21,7 +21,7 @@ export const SECONDARY_INFO: {
 } = {
     'hobbies & interests': [
         `Fan of fantasy, action & adventure movies`,
-        'Some random data just for visualization purpose '
+        'Some random data just for visualization purpose'
     ],
     'technical knowledge': [
         'Some random data just for visualization purpose which is supposedly long',
