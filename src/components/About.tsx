@@ -140,7 +140,7 @@ const About: FC = () => {
                             variant="h5"
                             fontFamily={FONTS.general}
                         >
-                            My Brief Timeline;
+                            Brief Timeline;
                         </Typography>
 
                         <MyTimeline />
