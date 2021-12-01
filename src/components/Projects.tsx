@@ -3,105 +3,12 @@ import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Grow from '@mui/material/Grow';
-import Zoom from '@mui/material/Zoom';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import LanguageIcon from '@mui/icons-material/LanguageOutlined';
-import MuiCard, { CardProps as MuiCardProps } from '@mui/material/Card';
 
 import Title from './Title';
+import Card from './ProjectCard';
 import Subtitle from './Subtitle';
 import ContentBox from './ContentBox';
-import { GitHubIcon } from './SvgIcons';
-import { FONTS } from '../shared/appSettings';
-import DefaultCodeIcon from '../icons/code.svg';
 import { PROJECT_DATA } from '../shared/projectData';
-
-interface CardProps {
-    data: PROJECT_DATA;
-    muiProps?: MuiCardProps;
-    animationDelay: number;
-}
-
-const Card: FC<CardProps> = props => {
-    /* Limit animationDelay to 5000 ms */
-    props.animationDelay > 5000 ? (props.animationDelay = 5000) : false;
-
-    return (
-        <Zoom in={true} style={{ transitionDelay: `${props.animationDelay}ms` }}>
-            <MuiCard
-                elevation={6}
-                {...props.muiProps}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    height: '100%'
-                }}
-            >
-                <Box>
-                    <CardMedia
-                        component="img"
-                        height="180"
-                        image={DefaultCodeIcon}
-                        alt="DefaultIcon"
-                        sx={{ objectFit: 'contain', backgroundColor: '#FAEBD7' }}
-                    />
-                    <CardContent sx={{ textAlign: 'left' }}>
-                        <Typography gutterBottom variant="h5" fontFamily={FONTS.general}>
-                            {props.data.title}
-                        </Typography>
-                        <Typography variant="h6" color="text.secondary" fontFamily={FONTS.para}>
-                            {props.data.description.map((text, i) => {
-                                return (
-                                    <>
-                                        <span dangerouslySetInnerHTML={{ __html: text }}></span>
-                                        {i + 1 < props.data.description.length ? <br /> : ''}
-                                    </>
-                                );
-                            })}
-                        </Typography>
-                    </CardContent>
-                </Box>
-                <CardActions>
-                    {props.data.githubUrl ? (
-                        <Tooltip
-                            title={props.data.private ? 'Private Repository' : ''}
-                            placement="right"
-                        >
-                            <Button
-                                href={props.data.githubUrl}
-                                target="_blank"
-                                size="large"
-                                color={props.data.private ? 'error' : 'warning'}
-                                sx={{ px: 1.5 }}
-                                startIcon={<GitHubIcon />}
-                            >
-                                Repository
-                            </Button>
-                        </Tooltip>
-                    ) : null}
-                    {props.data.website ? (
-                        <Button
-                            size="large"
-                            color="warning"
-                            href={props.data.website}
-                            target="_blank"
-                            sx={{ px: 1.5 }}
-                            startIcon={<LanguageIcon />}
-                        >
-                            Website
-                        </Button>
-                    ) : null}
-                </CardActions>
-            </MuiCard>
-        </Zoom>
-    );
-};
 
 const Projects: FC = () => {
     /* Base delay in appearance of each card (later multiplied by card number) */
