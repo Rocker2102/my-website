@@ -37,7 +37,7 @@ const About: FC = () => {
             <ContentBox>
                 <Title>About Me</Title>
 
-                <Box mt={4}>
+                <Box mt={{ xs: 4, md: 6, lg: 7 }}>
                     <Grid container spacing={4}>
                         <Grid item textAlign="center" margin="auto">
                             <Avatar
