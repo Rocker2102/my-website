@@ -22,6 +22,8 @@ import type { PROJECT_DATA } from '../shared/projectData';
 const cardMediaHeight = 240;
 const cardMediaBackground = '#FAEBD7';
 
+const privateRepoMsg = 'Repository currently private';
+
 interface ProjectCardProps {
     data: PROJECT_DATA;
     muiProps?: CardProps;
@@ -70,10 +72,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                 </Box>
                 <CardActions>
                     {props.data.githubUrl ? (
-                        <Tooltip
-                            title={props.data.private ? 'Private Repository' : ''}
-                            placement="right"
-                        >
+                        <Tooltip title={props.data.private ? privateRepoMsg : ''} placement="right">
                             <Button
                                 size="large"
                                 href={props.data.githubUrl}

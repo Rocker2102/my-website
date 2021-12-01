@@ -14,6 +14,7 @@ export interface PROJECT_DATA {
 export const PROJECT_DATA: PROJECT_DATA[] = [
     {
         title: 'My Website',
+        private: true,
         githubUrl: 'https://github.com/Rocker2102/my-website',
         description: [
             'Source code of this website.',
