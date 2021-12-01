@@ -14,7 +14,6 @@ export interface PROJECT_DATA {
 export const PROJECT_DATA: PROJECT_DATA[] = [
     {
         title: 'My Website',
-        website: 'https://website-rocker2102.vercel.app/',
         githubUrl: 'https://github.com/Rocker2102/my-website',
         description: [
             'Source code of this website.',
@@ -43,8 +42,8 @@ export const PROJECT_DATA: PROJECT_DATA[] = [
         title: 'Attendance Tracker',
         githubUrl: 'https://github.com/Rocker2102/attendance-tracker',
         description: [
-            `A web app to track attendance of users. Uses REST API to communicate with the
-                backend server.`,
+            `A web app to track attendance of users. Uses <strong>REST API</strong> to
+                communicate with the backend server.`,
             'Tech stack: <strong>Core PHP, JavaScript, Bootstrap 4, MaterializeCSS</strong>'
         ]
     },
@@ -53,8 +52,8 @@ export const PROJECT_DATA: PROJECT_DATA[] = [
         githubUrl: 'https://github.com/Rocker2102/app-monitor',
         description: [
             `A small <strong>python script</strong> which monitors a given app in Windows
-                and stores the data in a JSON file. This data includes the app start
-                time, stop time & the total usage of the app being monitored.`
+                and stores the data in a <strong>JSON file</strong>. This data includes
+                the app start time, stop time & the total usage of the app being monitored.`
         ]
     },
     {
@@ -104,7 +103,7 @@ export const PROJECT_DATA: PROJECT_DATA[] = [
         githubUrl: 'https://github.com/Rocker2102/todo-laravel',
         description: [
             'A web page to manage todo&rsquo;s.',
-            'Currently being redesigned using Laravel 8 & Bootstrap 5.'
+            'Currently being redesigned using <strong>Laravel 8 & Bootstrap 5</strong>.'
         ]
     }
 ];
