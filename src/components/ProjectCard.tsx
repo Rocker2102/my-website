@@ -16,6 +16,12 @@ import { FONTS } from '../shared/appSettings';
 import DefaultCodeIcon from '../icons/code.svg';
 import type { PROJECT_DATA } from '../shared/projectData';
 
+/**
+ * Card image (media) static properties
+ */
+const cardMediaHeight = 240;
+const cardMediaBackground = '#FAEBD7';
+
 interface ProjectCardProps {
     data: PROJECT_DATA;
     muiProps?: CardProps;
@@ -40,11 +46,11 @@ const ProjectCard: FC<ProjectCardProps> = props => {
             >
                 <Box>
                     <CardMedia
-                        alt="DefaultIcon"
-                        height="180"
+                        alt="ProjectIcon"
                         image={DefaultCodeIcon}
+                        height={`${cardMediaHeight}px`}
                         component="img"
-                        sx={{ objectFit: 'contain', backgroundColor: '#FAEBD7' }}
+                        sx={{ objectFit: 'contain', backgroundColor: cardMediaBackground }}
                     />
                     <CardContent sx={{ textAlign: 'left' }}>
                         <Typography gutterBottom variant="h5" fontFamily={FONTS.general}>
@@ -80,6 +86,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                             </Button>
                         </Tooltip>
                     ) : null}
+
                     {props.data.website ? (
                         <Button
                             size="large"
