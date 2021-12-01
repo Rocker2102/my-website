@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Grow from '@mui/material/Grow';
 import Zoom from '@mui/material/Zoom';
 import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
@@ -58,7 +59,7 @@ const Card: FC<CardProps> = props => {
                             {props.data.description.map((text, i) => {
                                 return (
                                     <>
-                                        <span>{text}</span>
+                                        <span dangerouslySetInnerHTML={{ __html: text }}></span>
                                         {i + 1 < props.data.description.length ? <br /> : ''}
                                     </>
                                 );
@@ -68,16 +69,21 @@ const Card: FC<CardProps> = props => {
                 </Box>
                 <CardActions>
                     {props.data.githubUrl ? (
-                        <Button
-                            href={props.data.githubUrl}
-                            target="_blank"
-                            size="large"
-                            color="warning"
-                            sx={{ px: 1.5 }}
-                            startIcon={<GitHubIcon />}
+                        <Tooltip
+                            title={props.data.private ? 'Private Repository' : ''}
+                            placement="right"
                         >
-                            Repository
-                        </Button>
+                            <Button
+                                href={props.data.githubUrl}
+                                target="_blank"
+                                size="large"
+                                color={props.data.private ? 'error' : 'warning'}
+                                sx={{ px: 1.5 }}
+                                startIcon={<GitHubIcon />}
+                            >
+                                Repository
+                            </Button>
+                        </Tooltip>
                     ) : null}
                     {props.data.website ? (
                         <Button
