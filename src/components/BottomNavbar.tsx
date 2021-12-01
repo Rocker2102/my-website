@@ -15,9 +15,7 @@ const BottomNavbar: FC<BottomNavbarProps> = ({ currentPath }) => {
     const history = useHistory();
     const [path, setPath] = useState(currentPath);
 
-    /**
-     * Used to keep bottomnavbar in sync with current path
-     */
+    /* Used to keep bottomnavbar in sync with current path */
     currentPath !== path ? setPath(currentPath) : false;
 
     const handleChange = (event: SyntheticEvent, newPath: string) => {
