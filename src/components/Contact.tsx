@@ -15,28 +15,28 @@ import { styled } from '@mui/material/styles';
 import { FONTS } from '../shared/appSettings';
 import { CONTACT_POINTS } from '../shared/contactData';
 
-const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = Props => {
+const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = props => {
     const Item = styled(Paper)(({ theme }) => ({
         padding: `${theme.spacing(4)} ${theme.spacing(4)}`,
         color: theme.palette.text.secondary,
         cursor: 'pointer',
         transition: 'all 0.3s ease',
         '&:hover': {
-            color: Props.activeColor,
+            color: props.activeColor,
             transform: 'scale(1.02)'
         }
     }));
 
     return (
         <Grid item xs={12} md={6}>
-            <Link href={Props.href} rel="noopener" target="_blank" sx={{ textDecoration: 'none' }}>
+            <Link href={props.href} rel="noopener" target="_blank" sx={{ textDecoration: 'none' }}>
                 <Item elevation={7} sx={{ display: 'flex', alignItems: 'center' }}>
                     <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }} alignItems="center">
-                        <Props.Icon fontSize="large" />
+                        <props.Icon fontSize="large" />
 
                         <div style={{ textAlign: 'left' }}>
                             <Typography variant="h6" fontWeight={500} fontFamily={FONTS.general}>
-                                {Props.name}
+                                {props.name}
                             </Typography>
                             <Typography
                                 variant="subtitle1"
@@ -44,7 +44,7 @@ const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = Props => {
                                 fontFamily={FONTS.para}
                                 display={{ xs: 'none', sm: 'block' }}
                             >
-                                {Props.username ?? '-'}
+                                {props.username ?? '-'}
                             </Typography>
                         </div>
                     </Stack>
