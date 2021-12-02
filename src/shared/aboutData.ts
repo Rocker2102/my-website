@@ -10,10 +10,10 @@ import profileImg from '../images/profile.jpg';
 
 /* eslint-disable */
 export const PRIMARY_INFO = [
-    `I'm a full-stack web developer (mostly self-taught), an average programmer,
+    `I'm a full-stack web developer (LAMP/MERN), an average programmer,
         and a student from Lucknow, India`,
-    `I'm currently building (and learning of course 😅), a cross-platform desktop
-        application using Electron.js & React`
+    `I'm currently working on a cross-platform desktop application using
+        Electron.js & React`
 ];
 
 export const SECONDARY_INFO: {
@@ -21,11 +21,16 @@ export const SECONDARY_INFO: {
 } = {
     'hobbies & interests': [
         `Fan of fantasy, action & adventure movies`,
-        'Some random data just for visualization purpose'
+        'Love playing online FPS games',
+        '❤️ Football'
     ],
     'technical knowledge': [
-        'Some random data just for visualization purpose which is supposedly long',
-        'Some random data just for visualization purpose'
+        `Worked with PHP frameworks like Laravel & Codeigniter for developing REST
+            API's & stuff`,
+        `Also have working knowledge about responsive web design & front-end
+            libraries such as Bootstrap, MaterializeCSS & MUI`,
+        `Developed a few web applications & API's using popular JavaScript libraries &
+            frameworks including React, ExpressJS & Electron`
     ]
 };
 /* eslint-enable */
@@ -43,42 +48,42 @@ export const TIMELINE_INFO: {
 }[] = [
     {
         date: 'November 2021',
-        title: 'Received first (decent) job offer',
+        title: 'Received my first job offer 🏢',
         place: 'Lucknow',
         titleColor: 'success',
-        Icon: TodayIcon
+        Icon: WorkIcon
     },
     {
         date: 'May 2021 - August 2021',
-        title: 'Internship @ DS Legends Pte. Ltd.',
+        title: 'Internship @ DS Legends Pte. Ltd. (Singapore)',
         place: 'Bhopal',
         description: 'PHP Developer Intern (Full-time)',
-        Icon: WorkIcon
+        Icon: TodayIcon
     },
     {
         date: 'December 2020 - Feb 2021',
         title: 'Internship @ FOXAISR',
         place: 'Bhopal',
         description: 'NodeJS Developer Intern',
-        Icon: WorkIcon
+        Icon: TodayIcon
     },
     {
         date: 'May 2020 - June 2020',
         title: 'Internship @ Think2Exam',
         place: 'Bhopal',
         description: 'Full-Stack Developer Intern',
-        Icon: WorkIcon
+        Icon: TodayIcon
     },
     {
         date: 'December 2019 - Jan 2020',
         title: 'Internship @ XXYY Studios',
         place: 'Sikkim',
         description: 'Backend Developer Intern',
-        Icon: WorkIcon
+        Icon: TodayIcon
     },
     {
         date: 'August 2018',
-        title: 'Joined College',
+        title: 'Joined College 👷‍♂️',
         place: 'Sikkim',
         titleColor: 'success',
         description: 'National Institute of Technology, Sikkim',
@@ -100,7 +105,7 @@ export const TIMELINE_INFO: {
     },
     {
         date: '29 September 2000',
-        title: 'Birthday',
+        title: 'Birthday 🎉',
         place: 'Mumbai',
         titleColor: 'success',
         Icon: CakeIcon
