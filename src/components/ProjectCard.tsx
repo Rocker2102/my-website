@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 
 import Box from '@mui/material/Box';
 import Zoom from '@mui/material/Zoom';
@@ -61,10 +61,10 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                         <Typography variant="h6" color="text.secondary" fontFamily={FONTS.para}>
                             {props.data.description.map((text, i) => {
                                 return (
-                                    <>
+                                    <Fragment key={i}>
                                         <span dangerouslySetInnerHTML={{ __html: text }}></span>
                                         {i + 1 < props.data.description.length ? <br /> : ''}
-                                    </>
+                                    </Fragment>
                                 );
                             })}
                         </Typography>
