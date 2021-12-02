@@ -10,5 +10,5 @@ export const USER_DATA = {
     /**
      * The link can be absolute or relative from the 'public/' directory
      */
-    resume: 'resources/resume.pdf'
+    resume: 'resources/Ankush_Yadav_Resume.pdf'
 };

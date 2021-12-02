@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import CakeIcon from '@mui/icons-material/CakeRounded';
-import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
 import TodayIcon from '@mui/icons-material/TodayRounded';
 import SchoolIcon from '@mui/icons-material/SchoolRounded';
 import AutoStoriesIcon from '@mui/icons-material/AutoStoriesRounded';
@@ -10,10 +9,10 @@ import profileImg from '../images/profile.jpg';
 
 /* eslint-disable */
 export const PRIMARY_INFO = [
-    `I'm a full-stack web developer (mostly self-taught), an average programmer,
-        and a student from Lucknow, India`,
-    `I'm currently building (and learning of course 😅), a cross-platform desktop
-        application using Electron.js & React`
+    `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
+        with new programming concepts & technologies`,
+    `I'm currently working on a cross-platform desktop application using
+        Electron.js & React`
 ];
 
 export const SECONDARY_INFO: {
@@ -21,11 +20,15 @@ export const SECONDARY_INFO: {
 } = {
     'hobbies & interests': [
         `Fan of fantasy, action & adventure movies`,
-        'Some random data just for visualization purpose'
+        '❤️ playing online FPS games & football'
     ],
     'technical knowledge': [
-        'Some random data just for visualization purpose which is supposedly long',
-        'Some random data just for visualization purpose'
+        `Worked with PHP frameworks like Laravel & Codeigniter for developing REST
+            API's & stuff`,
+        `Also have working knowledge about responsive web design & front-end
+            libraries such as Bootstrap, MaterializeCSS & MUI`,
+        `Developed a few web applications & API's using popular JavaScript libraries &
+            frameworks including jQuery, React, ExpressJS & Electron`
     ]
 };
 /* eslint-enable */
@@ -42,43 +45,36 @@ export const TIMELINE_INFO: {
     Icon?: FC;
 }[] = [
     {
-        date: 'November 2021',
-        title: 'Received first (decent) job offer',
-        place: 'Lucknow',
-        titleColor: 'success',
+        date: 'May 2021 - August 2021',
+        title: 'PHP Developer Intern (Full-time)',
+        place: 'Bhopal',
+        description: 'Internship @ DS Legends Pte. Ltd. (Singapore)',
         Icon: TodayIcon
     },
     {
-        date: 'May 2021 - August 2021',
-        title: 'Internship @ DS Legends Pte. Ltd.',
-        place: 'Bhopal',
-        description: 'PHP Developer Intern (Full-time)',
-        Icon: WorkIcon
-    },
-    {
         date: 'December 2020 - Feb 2021',
-        title: 'Internship @ FOXAISR',
+        title: 'NodeJS Developer Intern',
         place: 'Bhopal',
-        description: 'NodeJS Developer Intern',
-        Icon: WorkIcon
+        description: 'Internship @ FOXAISR',
+        Icon: TodayIcon
     },
     {
         date: 'May 2020 - June 2020',
-        title: 'Internship @ Think2Exam',
+        title: 'Full-Stack Developer Intern',
         place: 'Bhopal',
-        description: 'Full-Stack Developer Intern',
-        Icon: WorkIcon
+        description: 'Internship @ Think2Exam',
+        Icon: TodayIcon
     },
     {
         date: 'December 2019 - Jan 2020',
-        title: 'Internship @ XXYY Studios',
+        title: 'Backend Developer Intern',
         place: 'Sikkim',
-        description: 'Backend Developer Intern',
-        Icon: WorkIcon
+        description: 'Internship @ XXYY Studios',
+        Icon: TodayIcon
     },
     {
         date: 'August 2018',
-        title: 'Joined College',
+        title: 'Joined College 👷‍♂️',
         place: 'Sikkim',
         titleColor: 'success',
         description: 'National Institute of Technology, Sikkim',
@@ -100,7 +96,7 @@ export const TIMELINE_INFO: {
     },
     {
         date: '29 September 2000',
-        title: 'Birthday',
+        title: 'Birthday 🎉',
         place: 'Mumbai',
         titleColor: 'success',
         Icon: CakeIcon

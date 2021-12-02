@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Theme, ThemeProvider } from '@mui/system';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Components, ThemeOptions } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import Home from './components/Home';
@@ -12,12 +12,28 @@ import TopNavbar from './components/TopNavbar';
 import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
+import MobileDetect from 'mobile-detect';
 import { ROUTES } from './shared/routeData';
 import { USER_DATA } from './shared/appSettings';
 import { useHistory, Route, Switch } from 'react-router-dom';
 
+/**
+ * Automatically detect mobile devices & disable transitions on low-end devices for
+ * better user experience.
+ */
+const shouldEnableTransition = (): boolean => {
+    const md = new MobileDetect(window.navigator.userAgent);
+    const alwaysDisable = ['Bot', 'MobileBot', 'Watch'];
+
+    if (alwaysDisable.some(type => md.is(type))) return false;
+    if (!md.mobile()) return true;
+    if (md.mobileGrade() === 'A') return true;
+
+    return false;
+};
+
 function App(): JSX.Element {
-    const theme: Theme = createTheme({
+    const customThemeOptions: ThemeOptions = {
         palette: {
             mode: 'dark'
         },
@@ -30,7 +46,24 @@ function App(): JSX.Element {
                 }
             }
         }
-    });
+    };
+
+    /**
+     * Modify theme options for mobile devices
+     */
+    if (!shouldEnableTransition()) {
+        (customThemeOptions['components'] as Components).MuiButton = {
+            defaultProps: {
+                disableRipple: true
+            }
+        };
+
+        customThemeOptions.transitions = {
+            create: () => 'none'
+        };
+    }
+
+    const theme: Theme = createTheme(customThemeOptions);
 
     const history = useHistory();
     const [path, setPath] = useState(window.location.pathname);
