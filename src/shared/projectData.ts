@@ -14,6 +14,7 @@ export interface PROJECT_DATA {
  */
 export const PROJECT_DATA: PROJECT_DATA[] = [
     {
+        isWIP: true,
         title: 'My Website',
         private: true,
         githubUrl: 'https://github.com/Rocker2102/my-website',
@@ -23,8 +24,8 @@ export const PROJECT_DATA: PROJECT_DATA[] = [
         ]
     },
     {
-        title: 'Electron Player',
         isWIP: true,
+        title: 'Electron Player',
         private: true,
         githubUrl: 'https://github.com/Rocker2102/electron-music-player',
         description: [
