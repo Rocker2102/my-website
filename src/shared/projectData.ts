@@ -1,6 +1,7 @@
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PROJECT_DATA {
     title: string;
+    isWIP?: boolean;
     website?: string;
     private?: boolean;
     githubUrl?: string;
@@ -23,6 +24,7 @@ export const PROJECT_DATA: PROJECT_DATA[] = [
     },
     {
         title: 'Electron Player',
+        isWIP: true,
         private: true,
         githubUrl: 'https://github.com/Rocker2102/electron-music-player',
         description: [

@@ -10,6 +10,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Card, { CardProps } from '@mui/material/Card';
 import LanguageIcon from '@mui/icons-material/LanguageOutlined';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 
 import { GitHubIcon } from './SvgIcons';
 import { FONTS } from '../shared/appSettings';
@@ -96,6 +97,17 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                             sx={{ px: 1.5 }}
                         >
                             Website
+                        </Button>
+                    ) : null}
+
+                    {props.data.isWIP ? (
+                        <Button
+                            size="large"
+                            color="success"
+                            sx={{ px: 1.5, marginLeft: 'auto' }}
+                            startIcon={<QueryBuilderIcon />}
+                        >
+                            WIP
                         </Button>
                     ) : null}
                 </CardActions>
