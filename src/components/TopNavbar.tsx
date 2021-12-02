@@ -7,9 +7,9 @@ import Avatar from '@mui/material/Avatar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import LanguageIcon from '@mui/icons-material/Language';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-import logo from '../logo.svg';
 import { ROUTES } from '../shared/routeData';
 import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
@@ -65,25 +65,11 @@ const TopNavbar: FC = () => {
                             transition: 'all 0.3s'
                         }}
                     >
-                        <Box>
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="div"
-                                sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                            >
-                                <Avatar alt="AY" src={logo} />
-                            </Typography>
-
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="div"
-                                sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                            >
-                                <Avatar alt="AY" src={logo} />
-                            </Typography>
-                        </Box>
+                        <Typography variant="h6" noWrap component="div">
+                            <Avatar alt="AY">
+                                <LanguageIcon />
+                            </Avatar>
+                        </Typography>
 
                         <Box sx={{ display: { xs: 'none', md: 'inline-flex' } }}>
                             {ROUTES.map(({ name, path }) => (
