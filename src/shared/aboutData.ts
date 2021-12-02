@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import CakeIcon from '@mui/icons-material/CakeRounded';
-import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
 import TodayIcon from '@mui/icons-material/TodayRounded';
 import SchoolIcon from '@mui/icons-material/SchoolRounded';
 import AutoStoriesIcon from '@mui/icons-material/AutoStoriesRounded';
