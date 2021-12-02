@@ -10,8 +10,8 @@ import profileImg from '../images/profile.jpg';
 
 /* eslint-disable */
 export const PRIMARY_INFO = [
-    `I'm a full-stack web developer (LAMP/MERN), an average programmer,
-        and a student from Lucknow, India`,
+    `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
+        with new programming concepts & technologies`,
     `I'm currently working on a cross-platform desktop application using
         Electron.js & React`
 ];
@@ -29,7 +29,7 @@ export const SECONDARY_INFO: {
         `Also have working knowledge about responsive web design & front-end
             libraries such as Bootstrap, MaterializeCSS & MUI`,
         `Developed a few web applications & API's using popular JavaScript libraries &
-            frameworks including React, ExpressJS & Electron`
+            frameworks including jQuery, React, ExpressJS & Electron`
     ]
 };
 /* eslint-enable */
@@ -46,38 +46,31 @@ export const TIMELINE_INFO: {
     Icon?: FC;
 }[] = [
     {
-        date: 'November 2021',
-        title: 'Received my first job offer 🏢',
-        place: 'Lucknow',
-        titleColor: 'success',
-        Icon: WorkIcon
-    },
-    {
         date: 'May 2021 - August 2021',
-        title: 'Internship @ DS Legends Pte. Ltd. (Singapore)',
+        title: 'PHP Developer Intern (Full-time)',
         place: 'Bhopal',
-        description: 'PHP Developer Intern (Full-time)',
+        description: 'Internship @ DS Legends Pte. Ltd. (Singapore)',
         Icon: TodayIcon
     },
     {
         date: 'December 2020 - Feb 2021',
-        title: 'Internship @ FOXAISR',
+        title: 'NodeJS Developer Intern',
         place: 'Bhopal',
-        description: 'NodeJS Developer Intern',
+        description: 'Internship @ FOXAISR',
         Icon: TodayIcon
     },
     {
         date: 'May 2020 - June 2020',
-        title: 'Internship @ Think2Exam',
+        title: 'Full-Stack Developer Intern',
         place: 'Bhopal',
-        description: 'Full-Stack Developer Intern',
+        description: 'Internship @ Think2Exam',
         Icon: TodayIcon
     },
     {
         date: 'December 2019 - Jan 2020',
-        title: 'Internship @ XXYY Studios',
+        title: 'Backend Developer Intern',
         place: 'Sikkim',
-        description: 'Backend Developer Intern',
+        description: 'Internship @ XXYY Studios',
         Icon: TodayIcon
     },
     {
