@@ -38,7 +38,7 @@ const About: FC = () => {
                 <Title>About Me</Title>
 
                 <Box mt={{ xs: 4, md: 6, lg: 7 }}>
-                    <Grid container spacing={4}>
+                    <Grid container spacing={4} justifyContent="center">
                         <Grid item textAlign="center" margin="auto">
                             <Avatar
                                 src={PROFILE_IMG}
