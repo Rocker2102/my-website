@@ -12,6 +12,7 @@ import TopNavbar from './components/TopNavbar';
 import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
+import ReactGA from 'react-ga';
 import MobileDetect from 'mobile-detect';
 import { ROUTES } from './shared/routeData';
 import { USER_DATA } from './shared/appSettings';
@@ -75,6 +76,8 @@ function App(): JSX.Element {
         const titleTag = document.getElementsByTagName('title')[0];
 
         return history.listen(location => {
+            ReactGA.pageview(window.location.pathname + window.location.search);
+
             const { name } = ROUTES.find(
                 route => route.path === location.pathname
             ) as typeof ROUTES[number];
