@@ -1,9 +1,10 @@
-/* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PROJECT_DATA {
     title: string;
     isWIP?: boolean;
     website?: string;
     private?: boolean;
+    coverImg?: string;
+    coverIcon?: string;
     githubUrl?: string;
     description: string[];
 }
@@ -16,7 +17,6 @@ export const PROJECT_DATA: PROJECT_DATA[] = [
     {
         isWIP: true,
         title: 'My Website',
-        private: true,
         githubUrl: 'https://github.com/Rocker2102/my-website',
         description: [
             'Source code of this website.',

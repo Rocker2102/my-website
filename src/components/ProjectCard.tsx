@@ -50,10 +50,13 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                 <Box>
                     <CardMedia
                         alt="ProjectIcon"
-                        image={DefaultCodeIcon}
+                        image={props.data?.coverImg ?? props.data.coverIcon ?? DefaultCodeIcon}
                         height={`${cardMediaHeight}px`}
                         component="img"
-                        sx={{ objectFit: 'contain', backgroundColor: cardMediaBackground }}
+                        sx={{
+                            objectFit: props.data?.coverImg ? 'cover' : 'contain',
+                            backgroundColor: cardMediaBackground
+                        }}
                     />
                     <CardContent sx={{ textAlign: 'left' }}>
                         <Typography gutterBottom variant="h5" fontFamily={FONTS.general}>
@@ -71,6 +74,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                         </Typography>
                     </CardContent>
                 </Box>
+
                 <CardActions>
                     {props.data.githubUrl ? (
                         <Tooltip title={props.data.private ? privateRepoMsg : ''} placement="right">
