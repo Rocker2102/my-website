@@ -21,7 +21,7 @@ import type { PROJECT_DATA } from '../shared/projectData';
  * Card image (media) static properties
  */
 const cardMediaHeight = 240;
-const cardMediaBackground = '#FAEBD7';
+const cardMediaBackground = 'linear-gradient(to bottom right, #e66465, #9198e5)';
 
 const privateRepoMsg = 'Repository currently private';
 
@@ -55,7 +55,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                         component="img"
                         sx={{
                             objectFit: props.data?.coverImg ? 'cover' : 'contain',
-                            backgroundColor: cardMediaBackground
+                            background: props.data?.background ?? cardMediaBackground
                         }}
                     />
                     <CardContent sx={{ textAlign: 'left' }}>
