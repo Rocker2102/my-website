@@ -5,7 +5,13 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import ReactGA from 'react-ga';
 import reportWebVitals from './reportWebVitals';
+
+/**
+ * Initialize react analytics
+ */
+ReactGA.initialize('G-GCPDX4GD0S');
 
 ReactDOM.render(
     <StrictMode>
