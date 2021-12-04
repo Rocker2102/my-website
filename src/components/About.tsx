@@ -10,6 +10,7 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import Title from './Title';
+import ReactGA from 'react-ga';
 import ContentBox from './ContentBox';
 import MyTimeline from './MyTimeline';
 import { useHistory } from 'react-router-dom';
@@ -27,6 +28,13 @@ const dpSxProp = {
     xs: `${imgSize - 6}${imgUnit}`,
     sm: `${imgSize - 2}${imgUnit}`,
     md: `${imgSize}${imgUnit}`
+};
+
+const handleAnalyticsEvent = (): void => {
+    ReactGA.event({
+        action: 'Downloaded Resume',
+        category: 'File Download'
+    });
 };
 
 const About: FC = () => {
@@ -83,7 +91,12 @@ const About: FC = () => {
                                     Connect now
                                 </Link>
                                 &nbsp;or&nbsp;
-                                <Link href={USER_DATA.resume} underline="hover">
+                                <Link
+                                    href={USER_DATA.resume}
+                                    target="_blank"
+                                    underline="hover"
+                                    onClick={handleAnalyticsEvent}
+                                >
                                     download my Resume
                                 </Link>
                                 ;

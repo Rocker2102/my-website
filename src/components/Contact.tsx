@@ -9,11 +9,20 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 import Title from './Title';
+import ReactGA from 'react-ga';
 import Subtitle from './Subtitle';
 import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
 import { FONTS } from '../shared/appSettings';
 import { CONTACT_POINTS } from '../shared/contactData';
+
+const handleAnalyticsEvent = (label: typeof CONTACT_POINTS[number]['name']): void => {
+    ReactGA.event({
+        label,
+        action: 'Viewed social profile',
+        category: 'Navigation'
+    });
+};
 
 const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = props => {
     const Item = styled(Paper)(({ theme }) => ({
@@ -29,7 +38,13 @@ const ContactRowItem: FC<typeof CONTACT_POINTS[number]> = props => {
 
     return (
         <Grid item xs={12} md={6}>
-            <Link href={props.href} rel="noopener" target="_blank" sx={{ textDecoration: 'none' }}>
+            <Link
+                href={props.href}
+                rel="noopener"
+                target="_blank"
+                sx={{ textDecoration: 'none' }}
+                onClick={() => handleAnalyticsEvent(props.name)}
+            >
                 <Item elevation={7} sx={{ display: 'flex', alignItems: 'center' }}>
                     <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }} alignItems="center">
                         <props.Icon fontSize="large" />

@@ -12,6 +12,7 @@ import Card, { CardProps } from '@mui/material/Card';
 import LanguageIcon from '@mui/icons-material/LanguageOutlined';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 
+import ReactGA from 'react-ga';
 import { GitHubIcon } from './SvgIcons';
 import { FONTS } from '../shared/appSettings';
 import DefaultCodeIcon from '../icons/code.svg';
@@ -21,9 +22,26 @@ import type { PROJECT_DATA } from '../shared/projectData';
  * Card image (media) static properties
  */
 const cardMediaHeight = 240;
-const cardMediaBackground = '#FAEBD7';
+const cardMediaBackground = 'linear-gradient(to bottom right, #e66465, #9198e5)';
 
 const privateRepoMsg = 'Repository currently private';
+
+const handleAnalyticsEvent = (type: 'github' | 'website' | 'wip', label: string): void => {
+    let action: string;
+    if (type === 'github') {
+        action = 'Opened GitHub Repository';
+    } else if (type === 'website') {
+        action = 'Opened Website';
+    } else {
+        action = 'Clicked WIP button';
+    }
+
+    ReactGA.event({
+        label,
+        action,
+        category: type === 'wip' ? 'Button' : 'Navigation'
+    });
+};
 
 interface ProjectCardProps {
     data: PROJECT_DATA;
@@ -50,10 +68,13 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                 <Box>
                     <CardMedia
                         alt="ProjectIcon"
-                        image={DefaultCodeIcon}
+                        image={props.data?.coverImg ?? props.data.coverIcon ?? DefaultCodeIcon}
                         height={`${cardMediaHeight}px`}
                         component="img"
-                        sx={{ objectFit: 'contain', backgroundColor: cardMediaBackground }}
+                        sx={{
+                            objectFit: props.data?.coverImg ? 'cover' : 'contain',
+                            background: props.data?.background ?? cardMediaBackground
+                        }}
                     />
                     <CardContent sx={{ textAlign: 'left' }}>
                         <Typography gutterBottom variant="h5" fontFamily={FONTS.general}>
@@ -71,6 +92,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                         </Typography>
                     </CardContent>
                 </Box>
+
                 <CardActions>
                     {props.data.githubUrl ? (
                         <Tooltip title={props.data.private ? privateRepoMsg : ''} placement="right">
@@ -81,6 +103,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                                 target="_blank"
                                 startIcon={<GitHubIcon />}
                                 sx={{ px: 1.5 }}
+                                onClick={() => handleAnalyticsEvent('github', props.data.title)}
                             >
                                 Repository
                             </Button>
@@ -95,6 +118,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                             target="_blank"
                             startIcon={<LanguageIcon />}
                             sx={{ px: 1.5 }}
+                            onClick={() => handleAnalyticsEvent('website', props.data.title)}
                         >
                             Website
                         </Button>
@@ -106,6 +130,7 @@ const ProjectCard: FC<ProjectCardProps> = props => {
                             color="success"
                             sx={{ px: 1.5, marginLeft: 'auto' }}
                             startIcon={<QueryBuilderIcon />}
+                            onClick={() => handleAnalyticsEvent('wip', props.data.title)}
                         >
                             WIP
                         </Button>
