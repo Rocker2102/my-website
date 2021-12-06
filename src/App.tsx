@@ -18,6 +18,20 @@ import { ROUTES } from './shared/routeData';
 import { USER_DATA } from './shared/appSettings';
 import { useHistory, Route, Switch } from 'react-router-dom';
 
+declare global {
+    interface Window {
+        gtag: (
+            type: 'event',
+            action: string,
+            options?: {
+                label?: string;
+                /* eslint-disable-next-line camelcase */
+                event_category?: string;
+            }
+        ) => void;
+    }
+}
+
 /**
  * Automatically detect mobile devices & disable transitions on low-end devices for
  * better user experience.

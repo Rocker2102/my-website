@@ -10,7 +10,6 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import Title from './Title';
-import ReactGA from 'react-ga';
 import ContentBox from './ContentBox';
 import MyTimeline from './MyTimeline';
 import { useHistory } from 'react-router-dom';
@@ -31,9 +30,9 @@ const dpSxProp = {
 };
 
 const handleAnalyticsEvent = (): void => {
-    ReactGA.event({
-        action: 'Downloaded Resume',
-        category: 'File Download'
+    window.gtag('event', 'Downloaded Resume', {
+        /* eslint-disable-next-line camelcase */
+        event_category: 'file_download'
     });
 };
 

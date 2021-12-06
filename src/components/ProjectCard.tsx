@@ -12,7 +12,6 @@ import Card, { CardProps } from '@mui/material/Card';
 import LanguageIcon from '@mui/icons-material/LanguageOutlined';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 
-import ReactGA from 'react-ga';
 import { GitHubIcon } from './SvgIcons';
 import { FONTS } from '../shared/appSettings';
 import DefaultCodeIcon from '../icons/code.svg';
@@ -36,10 +35,10 @@ const handleAnalyticsEvent = (type: 'github' | 'website' | 'wip', label: string)
         action = 'Clicked WIP button';
     }
 
-    ReactGA.event({
+    window.gtag('event', action, {
         label,
-        action,
-        category: type === 'wip' ? 'Button' : 'Navigation'
+        /* eslint-disable-next-line camelcase */
+        event_category: type === 'wip' ? 'engagement' : 'navigation'
     });
 };
 

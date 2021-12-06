@@ -9,7 +9,6 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 import Title from './Title';
-import ReactGA from 'react-ga';
 import Subtitle from './Subtitle';
 import ContentBox from './ContentBox';
 import { styled } from '@mui/material/styles';
@@ -17,10 +16,10 @@ import { FONTS } from '../shared/appSettings';
 import { CONTACT_POINTS } from '../shared/contactData';
 
 const handleAnalyticsEvent = (label: typeof CONTACT_POINTS[number]['name']): void => {
-    ReactGA.event({
+    window.gtag('event', 'Viewed social profile', {
         label,
-        action: 'Viewed social profile',
-        category: 'Navigation'
+        /* eslint-disable-next-line camelcase */
+        event_category: 'navigation'
     });
 };
 
