@@ -12,7 +12,6 @@ import TopNavbar from './components/TopNavbar';
 import BottomNavbar from './components/BottomNavbar';
 
 import './App.css';
-import ReactGA from 'react-ga';
 import MobileDetect from 'mobile-detect';
 import { ROUTES } from './shared/routeData';
 import { USER_DATA } from './shared/appSettings';
@@ -24,9 +23,7 @@ declare global {
             type: 'event',
             action: string,
             options?: {
-                label?: string;
-                /* eslint-disable-next-line camelcase */
-                event_category?: string;
+                [property: string]: string;
             }
         ) => void;
     }
@@ -90,7 +87,13 @@ function App(): JSX.Element {
         const titleTag = document.getElementsByTagName('title')[0];
 
         return history.listen(location => {
-            ReactGA.pageview(window.location.pathname + window.location.search);
+            window.gtag('event', 'page_view', {
+                /* eslint-disable */
+                page_title: window.document.title,
+                page_location: window.location.href,
+                page_path: window.location.pathname + window.location.search
+                /* eslint-enable */
+            });
 
             const { name } = ROUTES.find(
                 route => route.path === location.pathname
