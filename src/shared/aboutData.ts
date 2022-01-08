@@ -11,16 +11,17 @@ import profileImg from '../images/profile.jpg';
 export const PRIMARY_INFO = [
     `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
         with new programming concepts & technologies`,
-    `I'm currently working on a cross-platform desktop application using
-        Electron.js & React`
+    `I'm currently trying to resume my work - the cross-platform desktop application which
+        I was developing using Electron.js & React`
 ];
 
 export const SECONDARY_INFO: {
     [key: string]: string[];
 } = {
     'hobbies & interests': [
-        `Fan of fantasy, action & adventure movies`,
-        '❤️ playing online FPS games & football'
+        'Fan of fantasy, action & adventure movies',
+        '❤️ playing online FPS games & football',
+        'I like meeting new people.... over texting 😅'
     ],
     'technical knowledge': [
         `Worked with PHP frameworks like Laravel & Codeigniter for developing REST
@@ -28,7 +29,7 @@ export const SECONDARY_INFO: {
         `Also have working knowledge about responsive web design & front-end
             libraries such as Bootstrap, MaterializeCSS & MUI`,
         `Developed a few web applications & API's using popular JavaScript libraries &
-            frameworks including jQuery, React, ExpressJS & Electron`
+            frameworks using jQuery, React, ExpressJS & Electron`
     ]
 };
 /* eslint-enable */
