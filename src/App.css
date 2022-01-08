@@ -63,3 +63,22 @@ div.link-underline {
         background-color: #0056B3;
     }
 }
+
+.img-loaded {
+    animation: img-pop-animation 0.4s ease forwards;
+}
+
+@keyframes img-pop-animation {
+    30% {
+        opacity: 0.3;
+        transform: scale(1.2);
+    }
+    60% {
+        opacity: 0.6;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

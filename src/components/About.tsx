@@ -38,6 +38,7 @@ const handleAnalyticsEvent = (): void => {
 
 const About: FC = () => {
     const history = useHistory();
+    const imgContainerId = 'my-img-container';
 
     return (
         <Grow in={true} timeout={150}>
@@ -48,11 +49,21 @@ const About: FC = () => {
                     <Grid container spacing={4} justifyContent="center">
                         <Grid item textAlign="center" margin="auto">
                             <Avatar
+                                id={imgContainerId}
                                 src={PROFILE_IMG}
                                 alt={USER_DATA.name}
                                 sx={{
                                     width: dpSxProp,
-                                    height: dpSxProp
+                                    height: dpSxProp,
+                                    opacity: 0
+                                }}
+                                imgProps={{
+                                    onLoad: () => {
+                                        const imgContainer = window.document.getElementById(
+                                            imgContainerId
+                                        ) as HTMLImageElement;
+                                        imgContainer.classList.add('img-loaded');
+                                    }
                                 }}
                             />
                         </Grid>
