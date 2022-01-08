@@ -29,7 +29,7 @@ export const SECONDARY_INFO: {
         `Also have working knowledge about responsive web design & front-end
             libraries such as Bootstrap, MaterializeCSS & MUI`,
         `Developed a few web applications & API's using popular JavaScript libraries &
-            frameworks using jQuery, React, ExpressJS & Electron`
+            frameworks including jQuery, React, ExpressJS & Electron`
     ]
 };
 /* eslint-enable */
