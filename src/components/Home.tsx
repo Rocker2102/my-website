@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Link, { LinkProps } from '@mui/material/Link';
 
 import ContentBox from './ContentBox';
+import { ROUTES } from '../shared/routeData';
 import { useHistory } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { FONTS } from '../shared/appSettings';
@@ -62,6 +63,15 @@ const Home: FC = () => {
                     color="text.primary"
                     fontWeight={500}
                     fontFamily={FONTS.general}
+                    onClick={() =>
+                        history.push(
+                            (ROUTES.find(route => route.name === 'about') as typeof ROUTES[number])
+                                .path
+                        )
+                    }
+                    sx={{
+                        cursor: 'pointer'
+                    }}
                 >
                     Ankush Yadav
                 </Typography>
@@ -91,7 +101,17 @@ const Home: FC = () => {
                         ) : null
                     )}
 
-                    <CustomLink onClick={() => history.push('/connect')}>
+                    <CustomLink
+                        onClick={() =>
+                            history.push(
+                                (
+                                    ROUTES.find(
+                                        route => route.name === 'connect'
+                                    ) as typeof ROUTES[number]
+                                ).path
+                            )
+                        }
+                    >
                         <AddIcon fontSize="large" />
                     </CustomLink>
                 </Stack>
