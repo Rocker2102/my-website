@@ -83,7 +83,7 @@ export const CONTACT_POINTS: {
         href: 'https://twitter.com/Rocker_2102',
         Icon: TwitterIcon,
         username: '@Rocker_2102',
-        showOnHome: true,
+        showOnHome: false,
         activeColor: '#1DA1F2',
         showOnContact: true
     },
