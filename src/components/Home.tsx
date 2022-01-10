@@ -3,10 +3,12 @@ import { FC } from 'react';
 import Grow from '@mui/material/Grow';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
+import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import Link, { LinkProps } from '@mui/material/Link';
 
 import ContentBox from './ContentBox';
+import { useHistory } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { FONTS } from '../shared/appSettings';
 import { CONTACT_POINTS } from '../shared/contactData';
@@ -40,6 +42,8 @@ const CustomLink: FC<CustomLinkProps> = props => {
 };
 
 const Home: FC = () => {
+    const history = useHistory();
+
     return (
         <Grow in={true} timeout={150}>
             <ContentBox>
@@ -86,6 +90,10 @@ const Home: FC = () => {
                             </CustomLink>
                         ) : null
                     )}
+
+                    <CustomLink onClick={() => history.push('/connect')}>
+                        <AddIcon fontSize="large" />
+                    </CustomLink>
                 </Stack>
             </ContentBox>
         </Grow>
