@@ -3,6 +3,7 @@ import { FC } from 'react';
 import CakeIcon from '@mui/icons-material/CakeRounded';
 import TodayIcon from '@mui/icons-material/TodayRounded';
 import SchoolIcon from '@mui/icons-material/SchoolRounded';
+import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
 import AutoStoriesIcon from '@mui/icons-material/AutoStoriesRounded';
 
 import profileImg from '../images/profile.jpg';
@@ -45,6 +46,14 @@ export const TIMELINE_INFO: {
     description?: string;
     Icon?: FC;
 }[] = [
+    {
+        date: 'January 2022 - Present',
+        title: 'Software Developer Intern',
+        place: 'Lucknow',
+        titleColor: 'success',
+        description: 'Internship @ Dassault Systèmes',
+        Icon: WorkIcon
+    },
     {
         date: 'May 2021 - August 2021',
         title: 'PHP Developer Intern (Full-time)',
