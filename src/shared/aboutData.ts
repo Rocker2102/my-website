@@ -48,7 +48,7 @@ export const TIMELINE_INFO: {
 }[] = [
     {
         date: 'January 2022 - Present',
-        title: 'Software Engineer Intern',
+        title: 'Software Engineer Intern (Creative)',
         place: 'Lucknow',
         titleColor: 'success',
         description: 'Internship @ Dassault Systèmes',
