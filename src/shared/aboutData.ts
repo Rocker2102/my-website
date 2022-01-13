@@ -56,9 +56,9 @@ export const TIMELINE_INFO: {
     },
     {
         date: 'May 2021 - August 2021',
-        title: 'PHP Developer Intern (Full-time)',
+        title: 'PHP Developer',
         place: 'Bhopal',
-        description: 'Internship @ DS Legends Pte. Ltd. (Singapore)',
+        description: 'Freelancer @ DS Legends Pte. Ltd. (Singapore)',
         Icon: TodayIcon
     },
     {
