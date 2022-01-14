@@ -12,8 +12,8 @@ import profileImg from '../images/profile.jpg';
 export const PRIMARY_INFO = [
     `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
         with new programming concepts & technologies`,
-    `I'm currently trying to resume my work - the cross-platform desktop application which
-        I was developing using Electron.js & React`
+    `I'm currently working on a cross-platform desktop music application alongside my
+        SWE internship`
 ];
 
 export const SECONDARY_INFO: {
@@ -48,7 +48,7 @@ export const TIMELINE_INFO: {
 }[] = [
     {
         date: 'January 2022 - Present',
-        title: 'Software Engineer Intern (Creative)',
+        title: 'Software Engineer Intern',
         place: 'Lucknow',
         titleColor: 'success',
         description: 'Internship @ Dassault Systèmes',
