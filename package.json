@@ -20,7 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-dev": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-    "test": "react-scripts test",
+    "test": "npx cypress run --record --key 9d46a386-41b0-44dc-ab54-92e0f709bbd0",
     "eject": "react-scripts eject",
     "lint": "npx eslint . --ext .js,.ts,.tsx",
     "lint-and-fix": "npx eslint . --ext .js,.ts,.tsx --fix"
