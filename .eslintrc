@@ -23,7 +23,7 @@
     "no-use-before-define": 2,
 
     "camelcase": 1,
-    "spaced-comment": 2,
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
     "semi": [2, "always", { "omitLastInOneLineBlock": true }],
     "quotes": [2, "single"],
     "max-len": ["warn", { "code": 100 }],
