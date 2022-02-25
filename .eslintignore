@@ -5,4 +5,4 @@ dist
 types
 src/*.test.tsx
 src/*.d.ts
-cypress/integration
+cypress/*
