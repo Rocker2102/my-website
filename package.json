@@ -16,7 +16,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider | SET APP_ENV=development && react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-dev": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
