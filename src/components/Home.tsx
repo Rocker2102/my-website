@@ -47,7 +47,7 @@ const Home: FC = () => {
 
     return (
         <Grow in={true} timeout={150}>
-            <ContentBox>
+            <ContentBox data-testid="app__home-main">
                 <Typography
                     variant="h5"
                     fontWeight={500}
@@ -72,10 +72,18 @@ const Home: FC = () => {
                     sx={{
                         cursor: 'pointer'
                     }}
+                    data-testid="app__home-main-primary-text"
                 >
                     Ankush Yadav
                 </Typography>
-                <Typography variant="h4" color="primary" mt={2.5} mb={4} fontFamily={FONTS.para}>
+                <Typography
+                    variant="h4"
+                    color="primary"
+                    mt={2.5}
+                    mb={4}
+                    fontFamily={FONTS.para}
+                    data-testid="app__home-main-secondary-text"
+                >
                     Student &amp; Full-Stack Web Developer
                 </Typography>
 

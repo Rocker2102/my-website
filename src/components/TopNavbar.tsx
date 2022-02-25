@@ -48,7 +48,11 @@ const TopNavbar: FC = () => {
 
     return (
         <ElevationScroll>
-            <AppBar position="fixed" sx={{ transition: 'all 0.3s ease' }}>
+            <AppBar
+                position="fixed"
+                sx={{ transition: 'all 0.3s ease' }}
+                data-testid="app__top-nav"
+            >
                 <Container maxWidth="xl">
                     <Toolbar
                         id={toolbarId}
