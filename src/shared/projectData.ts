@@ -31,7 +31,7 @@ export interface PROJECT_DATA {
  */
 export const PROJECT_DATA: PROJECT_DATA[] = [
     {
-        isWIP: true,
+        isWIP: false,
         title: 'My Website',
         coverIcon: LanguageSVG,
         githubUrl: 'https://github.com/Rocker2102/my-website',
