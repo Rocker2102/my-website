@@ -12,7 +12,7 @@ import profileImg from '../images/profile.jpg';
 export const PRIMARY_INFO = [
     `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
         with new programming concepts & technologies`,
-    `I'm currently working as an SWE intern at Dassault Systèmes.`
+    `I'm currently working as an SWE intern at Dassault Systèmes`
 ];
 
 export const SECONDARY_INFO: {
