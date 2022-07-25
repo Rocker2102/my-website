@@ -12,7 +12,7 @@ import profileImg from '../images/profile.jpg';
 export const PRIMARY_INFO = [
     `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
         with new programming concepts & technologies`,
-    `I'm currently working as an SWE intern at Dassault Systèmes`
+    `I'm currently working as an Associate Software Engineer at Dassault Systèmes`
 ];
 
 export const SECONDARY_INFO: {
@@ -45,72 +45,87 @@ export const TIMELINE_INFO: {
     description?: string;
     Icon?: FC;
 }[] = [
-    {
-        date: 'January 2022 - Present',
-        title: 'Software Engineer Intern',
-        place: 'Lucknow',
-        titleColor: 'success',
-        description: 'Internship @ Dassault Systèmes',
-        Icon: WorkIcon
-    },
-    {
-        date: 'May 2021 - August 2021',
-        title: 'PHP Developer',
-        place: 'Bhopal',
-        description: 'Freelancer @ DS Legends Pte. Ltd. (Singapore)',
-        Icon: TodayIcon
-    },
-    {
-        date: 'December 2020 - Feb 2021',
-        title: 'NodeJS Developer Intern',
-        place: 'Bhopal',
-        description: 'Internship @ FOXAISR',
-        Icon: TodayIcon
-    },
-    {
-        date: 'May 2020 - June 2020',
-        title: 'Full-Stack Developer Intern',
-        place: 'Bhopal',
-        description: 'Internship @ Think2Exam',
-        Icon: TodayIcon
-    },
-    {
-        date: 'December 2019 - Jan 2020',
-        title: 'Backend Developer Intern',
-        place: 'Sikkim',
-        description: 'Internship @ XXYY Studios',
-        Icon: TodayIcon
-    },
-    {
-        date: 'August 2018',
-        title: 'Joined College 👷‍♂️',
-        place: 'Sikkim',
-        titleColor: 'success',
-        description: 'National Institute of Technology, Sikkim',
-        Icon: SchoolIcon
-    },
-    {
-        date: 'March 2018',
-        title: '12th Boards',
-        place: 'Bhopal',
-        description: 'Kendriya Vidyalaya No. 3, Bhopal',
-        Icon: AutoStoriesIcon
-    },
-    {
-        date: 'March 2016',
-        title: '10th Boards',
-        place: 'Bhopal',
-        description: 'Kendriya Vidyalaya No. 3, Bhopal',
-        Icon: AutoStoriesIcon
-    },
-    {
-        date: '29 September 2000',
-        title: 'Birthday 🎉',
-        place: 'Mumbai',
-        titleColor: 'success',
-        Icon: CakeIcon
-    }
-];
+        {
+            date: 'July 2022 - Present',
+            title: 'Associate Software Engineer',
+            place: 'Pune',
+            titleColor: 'success',
+            description: 'Dassault Systèmes',
+            Icon: WorkIcon
+        },
+        {
+            date: 'July 2022',
+            title: 'Graduated',
+            place: 'Sikkim',
+            titleColor: 'success',
+            description: 'National Institute of Technology, Sikkim',
+            Icon: SchoolIcon
+        },
+        {
+            date: 'January 2022 - July 2022',
+            title: 'Software Engineer Intern',
+            place: 'Lucknow',
+            description: 'Internship @ Dassault Systèmes',
+            Icon: WorkIcon
+        },
+        {
+            date: 'May 2021 - August 2021',
+            title: 'PHP Developer',
+            place: 'Bhopal',
+            description: 'Freelancer @ DS Legends Pte. Ltd. (Singapore)',
+            Icon: TodayIcon
+        },
+        {
+            date: 'December 2020 - Feb 2021',
+            title: 'NodeJS Developer Intern',
+            place: 'Bhopal',
+            description: 'Internship @ FOXAISR',
+            Icon: TodayIcon
+        },
+        {
+            date: 'May 2020 - June 2020',
+            title: 'Full-Stack Developer Intern',
+            place: 'Bhopal',
+            description: 'Internship @ Think2Exam',
+            Icon: TodayIcon
+        },
+        {
+            date: 'December 2019 - Jan 2020',
+            title: 'Backend Developer Intern',
+            place: 'Sikkim',
+            description: 'Internship @ XXYY Studios',
+            Icon: TodayIcon
+        },
+        {
+            date: 'August 2018',
+            title: 'Joined College 👷‍♂️',
+            place: 'Sikkim',
+            titleColor: 'success',
+            description: 'National Institute of Technology, Sikkim',
+            Icon: SchoolIcon
+        },
+        {
+            date: 'March 2018',
+            title: '12th Boards',
+            place: 'Bhopal',
+            description: 'Kendriya Vidyalaya No. 3, Bhopal',
+            Icon: AutoStoriesIcon
+        },
+        {
+            date: 'March 2016',
+            title: '10th Boards',
+            place: 'Bhopal',
+            description: 'Kendriya Vidyalaya No. 3, Bhopal',
+            Icon: AutoStoriesIcon
+        },
+        {
+            date: '29 September 2000',
+            title: 'Birthday 🎉',
+            place: 'Mumbai',
+            titleColor: 'success',
+            Icon: CakeIcon
+        }
+    ];
 
 export const PROFILE_IMG = profileImg;
 
