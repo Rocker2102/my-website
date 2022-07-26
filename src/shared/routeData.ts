@@ -10,17 +10,17 @@ import PersonIcon from '@mui/icons-material/PersonOutlineRounded';
  * App route names & paths
  */
 export const ROUTES: {
-    name: string;
-    path: string;
-    Icon: FC<SvgIconProps>;
-    /**
-     * Whether the path is to be matched exactly or not
-     * ('exact' property not in use currently, may be removed in the future)
-     */
-    exact: boolean;
+  name: string;
+  path: string;
+  Icon: FC<SvgIconProps>;
+  /**
+   * Whether the path is to be matched exactly or not
+   * ('exact' property not in use currently, may be removed in the future)
+   */
+  exact: boolean;
 }[] = [
-    { name: 'home', path: '/home', exact: false, Icon: HomeIcon },
-    { name: 'projects', path: '/projects', exact: true, Icon: WorkIcon },
-    { name: 'about', path: '/about', exact: true, Icon: InfoIcon },
-    { name: 'connect', path: '/connect', exact: true, Icon: PersonIcon }
+  { name: 'home', path: '/home', exact: false, Icon: HomeIcon },
+  { name: 'projects', path: '/projects', exact: true, Icon: WorkIcon },
+  { name: 'about', path: '/about', exact: true, Icon: InfoIcon },
+  { name: 'connect', path: '/connect', exact: true, Icon: PersonIcon }
 ];
