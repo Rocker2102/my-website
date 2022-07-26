@@ -24,154 +24,142 @@ const imgSize = 30;
 const imgUnit = 'vh';
 
 const dpSxProp = {
-    xs: `${imgSize - 6}${imgUnit}`,
-    sm: `${imgSize - 2}${imgUnit}`,
-    md: `${imgSize}${imgUnit}`
+  xs: `${imgSize - 6}${imgUnit}`,
+  sm: `${imgSize - 2}${imgUnit}`,
+  md: `${imgSize}${imgUnit}`
 };
 
 const handleAnalyticsEvent = (): void => {
-    window.gtag('event', 'Downloaded Resume', {
-        /* eslint-disable-next-line camelcase */
-        event_category: 'file_download'
-    });
+  window.gtag('event', 'Downloaded Resume', {
+    /* eslint-disable-next-line camelcase */
+    event_category: 'file_download'
+  });
 };
 
 const About: FC = () => {
-    const history = useHistory();
-    const imgContainerId = 'my-img-container';
+  const history = useHistory();
+  const imgContainerId = 'my-img-container';
 
-    return (
-        <Grow in={true} timeout={150}>
-            <ContentBox>
-                <Title>About Me</Title>
+  return (
+    <Grow in={true} timeout={150}>
+      <ContentBox>
+        <Title>About Me</Title>
 
-                <Box mt={{ xs: 4, md: 6, lg: 7 }}>
-                    <Grid container spacing={4} justifyContent="center">
-                        <Grid item textAlign="center" margin="auto">
-                            <Avatar
-                                id={imgContainerId}
-                                src={PROFILE_IMG}
-                                alt={USER_DATA.name}
-                                sx={{
-                                    width: dpSxProp,
-                                    height: dpSxProp,
-                                    opacity: 0
-                                }}
-                                imgProps={{
-                                    onLoad: () => {
-                                        const imgContainer = window.document.getElementById(
-                                            imgContainerId
-                                        ) as HTMLImageElement;
-                                        imgContainer.classList.add('img-loaded');
-                                    }
-                                }}
-                            />
-                        </Grid>
-                        <Grid
-                            item
-                            margin={{ xs: 'auto', sm: 'initial' }}
-                            maxWidth={{ xs: 'initial', sm: '50vw' }}
-                            textAlign={{ xs: 'center', sm: 'left' }}
-                        >
-                            {PRIMARY_INFO.map((text: string, i: number) => (
-                                <Typography
-                                    key={i}
-                                    mb={2}
-                                    color="text.primary"
-                                    variant="h5"
-                                    fontFamily={FONTS.para}
-                                >
-                                    {text};
-                                </Typography>
-                            ))}
+        <Box mt={{ xs: 4, md: 6, lg: 7 }}>
+          <Grid container spacing={4} justifyContent="center">
+            <Grid item textAlign="center" margin="auto">
+              <Avatar
+                id={imgContainerId}
+                src={PROFILE_IMG}
+                alt={USER_DATA.name}
+                sx={{
+                  width: dpSxProp,
+                  height: dpSxProp,
+                  opacity: 0
+                }}
+                imgProps={{
+                  onLoad: () => {
+                    const imgContainer = window.document.getElementById(
+                      imgContainerId
+                    ) as HTMLImageElement;
+                    imgContainer.classList.add('img-loaded');
+                  }
+                }}
+              />
+            </Grid>
+            <Grid
+              item
+              margin={{ xs: 'auto', sm: 'initial' }}
+              maxWidth={{ xs: 'initial', sm: '50vw' }}
+              textAlign={{ xs: 'center', sm: 'left' }}
+            >
+              {PRIMARY_INFO.map((text: string, i: number) => (
+                <Typography
+                  key={i}
+                  mb={2}
+                  color="text.primary"
+                  variant="h5"
+                  fontFamily={FONTS.para}
+                >
+                  {text};
+                </Typography>
+              ))}
 
-                            <Typography
-                                mb={2}
-                                color="text.primary"
-                                variant="h5"
-                                fontFamily={FONTS.para}
-                            >
-                                Want to know more?{' '}
-                                <Link
-                                    rel="noopener"
-                                    underline="hover"
-                                    onClick={() => history.push('/connect')}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    Connect now
-                                </Link>
-                                &nbsp;or&nbsp;
-                                <Link
-                                    href={USER_DATA.resume}
-                                    target="_blank"
-                                    underline="hover"
-                                    onClick={handleAnalyticsEvent}
-                                >
-                                    download my Resume
-                                </Link>
-                                ;
-                            </Typography>
-                        </Grid>
-                    </Grid>
+              <Typography mb={2} color="text.primary" variant="h5" fontFamily={FONTS.para}>
+                Want to know more?{' '}
+                <Link
+                  rel="noopener"
+                  underline="hover"
+                  onClick={() => history.push('/connect')}
+                  style={{ cursor: 'pointer' }}
+                >
+                  Connect now
+                </Link>
+                &nbsp;or&nbsp;
+                <Link
+                  href={USER_DATA.resume}
+                  target="_blank"
+                  underline="hover"
+                  onClick={handleAnalyticsEvent}
+                >
+                  download my Resume
+                </Link>
+                ;
+              </Typography>
+            </Grid>
+          </Grid>
 
-                    <Stack
-                        mt={4}
-                        direction={{ xs: 'column', sm: 'row' }}
-                        spacing={3}
-                        justifyContent="space-between"
-                        alignItems="start"
-                        divider={<Divider orientation="vertical" flexItem />}
-                    >
-                        {Object.keys(SECONDARY_INFO).map(
-                            (title: keyof typeof SECONDARY_INFO, i: number) => (
-                                <Grid
-                                    item
-                                    key={title}
-                                    sm={6}
-                                    textAlign={{ xs: 'center', sm: i % 2 === 0 ? 'left' : 'right' }}
-                                    margin="auto"
-                                >
-                                    <Typography
-                                        mb={1}
-                                        color="secondary"
-                                        variant="h5"
-                                        fontFamily={FONTS.general}
-                                        sx={{ textTransform: 'capitalize' }}
-                                    >
-                                        {title};
-                                    </Typography>
-                                    {SECONDARY_INFO[title].map((listItem, i) => (
-                                        <Typography
-                                            key={i}
-                                            mb={2}
-                                            color="text.secondary"
-                                            variant="h6"
-                                            fontFamily={FONTS.para}
-                                        >
-                                            - {listItem};
-                                        </Typography>
-                                    ))}
-                                </Grid>
-                            )
-                        )}
-                    </Stack>
+          <Stack
+            mt={4}
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={3}
+            justifyContent="space-between"
+            alignItems="start"
+            divider={<Divider orientation="vertical" flexItem />}
+          >
+            {Object.keys(SECONDARY_INFO).map((title: keyof typeof SECONDARY_INFO, i: number) => (
+              <Grid
+                item
+                key={title}
+                sm={6}
+                textAlign={{ xs: 'center', sm: i % 2 === 0 ? 'left' : 'right' }}
+                margin="auto"
+              >
+                <Typography
+                  mb={1}
+                  color="secondary"
+                  variant="h5"
+                  fontFamily={FONTS.general}
+                  sx={{ textTransform: 'capitalize' }}
+                >
+                  {title};
+                </Typography>
+                {SECONDARY_INFO[title].map((listItem, i) => (
+                  <Typography
+                    key={i}
+                    mb={2}
+                    color="text.secondary"
+                    variant="h6"
+                    fontFamily={FONTS.para}
+                  >
+                    - {listItem};
+                  </Typography>
+                ))}
+              </Grid>
+            ))}
+          </Stack>
 
-                    <Box mt={4}>
-                        <Typography
-                            mb={2}
-                            color="secondary"
-                            variant="h5"
-                            fontFamily={FONTS.general}
-                        >
-                            Brief Timeline;
-                        </Typography>
+          <Box mt={4}>
+            <Typography mb={2} color="secondary" variant="h5" fontFamily={FONTS.general}>
+              Brief Timeline;
+            </Typography>
 
-                        <MyTimeline />
-                    </Box>
-                </Box>
-            </ContentBox>
-        </Grow>
-    );
+            <MyTimeline />
+          </Box>
+        </Box>
+      </ContentBox>
+    </Grow>
+  );
 };
 
 export default About;

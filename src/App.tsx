@@ -18,15 +18,15 @@ import { USER_DATA } from './shared/appSettings';
 import { useHistory, Route, Switch } from 'react-router-dom';
 
 declare global {
-    interface Window {
-        gtag: (
-            type: 'event',
-            action: string,
-            options?: {
-                [property: string]: string;
-            }
-        ) => void;
-    }
+  interface Window {
+    gtag: (
+      type: 'event',
+      action: string,
+      options?: {
+        [property: string]: string;
+      }
+    ) => void;
+  }
 }
 
 /**
@@ -34,115 +34,115 @@ declare global {
  * better user experience.
  */
 const shouldEnableTransition = (): boolean => {
-    const md = new MobileDetect(window.navigator.userAgent);
-    const alwaysDisable = ['Bot', 'MobileBot', 'Watch'];
+  const md = new MobileDetect(window.navigator.userAgent);
+  const alwaysDisable = ['Bot', 'MobileBot', 'Watch'];
 
-    if (alwaysDisable.some(type => md.is(type))) return false;
-    if (!md.mobile()) return true;
-    if (md.mobileGrade() === 'A') return true;
+  if (alwaysDisable.some(type => md.is(type))) return false;
+  if (!md.mobile()) return true;
+  if (md.mobileGrade() === 'A') return true;
 
-    return false;
+  return false;
 };
 
 function App(): JSX.Element {
-    const customThemeOptions: ThemeOptions = {
-        palette: {
-            mode: 'dark'
-        },
-        components: {
-            MuiAppBar: {
-                styleOverrides: {
-                    colorPrimary: {
-                        backgroundColor: 'rgba(48, 48, 52, 0.92)'
-                    }
-                }
-            }
+  const customThemeOptions: ThemeOptions = {
+    palette: {
+      mode: 'dark'
+    },
+    components: {
+      MuiAppBar: {
+        styleOverrides: {
+          colorPrimary: {
+            backgroundColor: 'rgba(48, 48, 52, 0.92)'
+          }
         }
+      }
+    }
+  };
+
+  /**
+   * Modify theme options for mobile devices
+   */
+  if (!shouldEnableTransition()) {
+    (customThemeOptions['components'] as Components).MuiButton = {
+      defaultProps: {
+        disableRipple: true
+      }
     };
 
-    /**
-     * Modify theme options for mobile devices
-     */
-    if (!shouldEnableTransition()) {
-        (customThemeOptions['components'] as Components).MuiButton = {
-            defaultProps: {
-                disableRipple: true
-            }
-        };
+    customThemeOptions.transitions = {
+      create: () => 'none'
+    };
+  }
 
-        customThemeOptions.transitions = {
-            create: () => 'none'
-        };
-    }
+  const theme: Theme = createTheme(customThemeOptions);
 
-    const theme: Theme = createTheme(customThemeOptions);
+  const history = useHistory();
+  const [path, setPath] = useState(window.location.pathname);
 
-    const history = useHistory();
-    const [path, setPath] = useState(window.location.pathname);
+  /**
+   * Auto-update page title using current path
+   */
+  useEffect(() => {
+    const titleTag = document.getElementsByTagName('title')[0];
 
-    /**
-     * Auto-update page title using current path
-     */
-    useEffect(() => {
-        const titleTag = document.getElementsByTagName('title')[0];
+    return history.listen(location => {
+      window.gtag('event', 'page_view', {
+        /* eslint-disable */
+        page_title: window.document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname + window.location.search
+        /* eslint-enable */
+      });
 
-        return history.listen(location => {
-            window.gtag('event', 'page_view', {
-                /* eslint-disable */
-                page_title: window.document.title,
-                page_location: window.location.href,
-                page_path: window.location.pathname + window.location.search
-                /* eslint-enable */
-            });
+      const { name } = ROUTES.find(
+        route => route.path === location.pathname
+      ) as typeof ROUTES[number];
 
-            const { name } = ROUTES.find(
-                route => route.path === location.pathname
-            ) as typeof ROUTES[number];
+      titleTag.innerText = `${USER_DATA.name} - ${
+        name.charAt(0).toUpperCase() + name.substring(1)
+      }`;
 
-            titleTag.innerText = `${USER_DATA.name} - ${
-                name.charAt(0).toUpperCase() + name.substring(1)
-            }`;
+      setPath(location.pathname);
+    });
+  }, [history]);
 
-            setPath(location.pathname);
-        });
-    }, [history]);
+  return (
+    <>
+      <CssBaseline />
 
-    return (
-        <>
-            <CssBaseline />
+      <div className="app">
+        <ThemeProvider theme={theme}>
+          <TopNavbar />
 
-            <div className="app">
-                <ThemeProvider theme={theme}>
-                    <TopNavbar />
+          <Switch>
+            <Route exact path="/about">
+              <section className="main">
+                <About />
+              </section>
+            </Route>
+            <Route exact path="/connect">
+              <section className="main">
+                <Contact />
+              </section>
+            </Route>
+            <Route exact path="/projects">
+              <section className="main">
+                <Projects />
+              </section>
+            </Route>
+            <Route>
+              <section className="main">
+                <Home />
+              </section>
+            </Route>
+          </Switch>
 
-                    <Switch>
-                        <Route exact path="/about">
-                            <section className="main">
-                                <About />
-                            </section>
-                        </Route>
-                        <Route exact path="/connect">
-                            <section className="main">
-                                <Contact />
-                            </section>
-                        </Route>
-                        <Route exact path="/projects">
-                            <section className="main">
-                                <Projects />
-                            </section>
-                        </Route>
-                        <Route>
-                            <section className="main">
-                                <Home />
-                            </section>
-                        </Route>
-                    </Switch>
-
-                    <BottomNavbar currentPath={path} />
-                </ThemeProvider>
-            </div>
-        </>
-    );
+          <BottomNavbar currentPath={path} />
+        </ThemeProvider>
+      </div>
+    </>
+  );
 }
 
 export default App;

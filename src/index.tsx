@@ -8,12 +8,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <StrictMode>
-        <Router>
-            <App />
-        </Router>
-    </StrictMode>,
-    document.getElementById('root')
+  <StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </StrictMode>,
+  document.getElementById('root')
 );
 
 /* If you want to start measuring performance in your app, pass a function

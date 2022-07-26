@@ -12,76 +12,76 @@ import { ReactComponent as TelegramSVG } from '../icons/telegram.svg';
 import { ReactComponent as WhatsAppSVG } from '../icons/whatsapp.svg';
 
 export const AtIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <AtSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <AtSVG />
+    </SvgIcon>
+  );
 };
 
 export const CodeIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <CodeSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <CodeSVG />
+    </SvgIcon>
+  );
 };
 
 export const GitHubIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <GitHubSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <GitHubSVG />
+    </SvgIcon>
+  );
 };
 
 export const FacebookIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <FacebookSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <FacebookSVG />
+    </SvgIcon>
+  );
 };
 
 export const LinkedInIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <LinkedInSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <LinkedInSVG />
+    </SvgIcon>
+  );
 };
 
 export const TelegramIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <TelegramSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <TelegramSVG />
+    </SvgIcon>
+  );
 };
 
 export const TwitterIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <TwitterSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <TwitterSVG />
+    </SvgIcon>
+  );
 };
 
 export const WhatsAppIcon: FC<SvgIconProps> = (props: SvgIconProps) => {
-    return (
-        <SvgIcon {...props}>
-            <WhatsAppSVG />
-        </SvgIcon>
-    );
+  return (
+    <SvgIcon {...props}>
+      <WhatsAppSVG />
+    </SvgIcon>
+  );
 };
 
 export default {
-    AtIcon,
-    CodeIcon,
-    GitHubIcon,
-    FacebookIcon,
-    LinkedInIcon,
-    TelegramIcon,
-    TwitterIcon,
-    WhatsAppIcon
+  AtIcon,
+  CodeIcon,
+  GitHubIcon,
+  FacebookIcon,
+  LinkedInIcon,
+  TelegramIcon,
+  TwitterIcon,
+  WhatsAppIcon
 };
