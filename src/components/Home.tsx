@@ -75,7 +75,7 @@ const Home: FC = () => {
           Ankush Yadav
         </Typography>
         <Typography variant="h4" color="primary" mt={2.5} mb={4} fontFamily={FONTS.para}>
-          Student &amp; Full-Stack Web Developer
+          Software Engineer
         </Typography>
 
         <Stack
