@@ -6,7 +6,7 @@ import SchoolIcon from '@mui/icons-material/SchoolRounded';
 import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
 import AutoStoriesIcon from '@mui/icons-material/AutoStoriesRounded';
 
-import profileImg from '../images/profile.jpg';
+import profileImg from '../images/profile_v3.webp';
 
 /* eslint-disable */
 export const PRIMARY_INFO = [
@@ -21,7 +21,7 @@ export const SECONDARY_INFO: {
   'hobbies & interests': [
     'Fan of fantasy, action & adventure movies',
     '❤️ playing online FPS games & football',
-    'I like meeting new people.... over texting 😅'
+    'I like meeting new people.. over texting 😅 > Well, not anymore!'
   ],
   'technical knowledge': [
     `Worked with PHP frameworks like Laravel & Codeigniter for developing REST
