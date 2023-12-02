@@ -21,7 +21,7 @@ export const SECONDARY_INFO: {
   'hobbies & interests': [
     'Fan of fantasy, action & adventure movies',
     '❤️ playing online FPS games & football',
-    'I like meeting new people.. over texting 😅 > Well, not anymore!'
+    'I liked to meet new people.. over texting > Well, not anymore!'
   ],
   'technical knowledge': [
     `Worked with PHP frameworks like Laravel & Codeigniter for developing REST
