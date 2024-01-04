@@ -24,9 +24,11 @@ const CustomLink: FC<CustomLinkProps> = props => {
     cursor: 'pointer',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
+    filter: 'blur(0.75px)',
     '&:hover': {
       color: props.activeColor ?? '#fff',
-      transform: 'scale(1.3)'
+      transform: 'scale(1.3)',
+      filter: 'blur(0px)'
     },
     '&:focus': {
       color: props.activeColor ?? '#fff'
@@ -65,11 +67,12 @@ const Home: FC = () => {
           fontFamily={FONTS.general}
           onClick={() =>
             history.push(
-              (ROUTES.find(route => route.name === 'about') as typeof ROUTES[number]).path
+              (ROUTES.find(route => route.name === 'about') as (typeof ROUTES)[number]).path
             )
           }
           sx={{
-            cursor: 'pointer'
+            cursor: 'pointer',
+            filter: 'blur(0.75px)'
           }}
         >
           Ankush Yadav
@@ -103,7 +106,7 @@ const Home: FC = () => {
           <CustomLink
             onClick={() =>
               history.push(
-                (ROUTES.find(route => route.name === 'connect') as typeof ROUTES[number]).path
+                (ROUTES.find(route => route.name === 'connect') as (typeof ROUTES)[number]).path
               )
             }
           >
