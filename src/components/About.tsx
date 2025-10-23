@@ -81,7 +81,7 @@ const About: FC = () => {
                   variant="h5"
                   fontFamily={FONTS.para}
                 >
-                  {text};
+                  {text}
                 </Typography>
               ))}
 
@@ -142,7 +142,7 @@ const About: FC = () => {
                     variant="h6"
                     fontFamily={FONTS.para}
                   >
-                    - {listItem};
+                    - {listItem}
                   </Typography>
                 ))}
               </Grid>
