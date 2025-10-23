@@ -5,6 +5,7 @@ import TodayIcon from '@mui/icons-material/TodayRounded';
 import SchoolIcon from '@mui/icons-material/SchoolRounded';
 import WorkIcon from '@mui/icons-material/WorkOutlineRounded';
 import AutoStoriesIcon from '@mui/icons-material/AutoStoriesRounded';
+import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
 
 import profileImg from '../images/profile_v3.webp';
 
@@ -12,16 +13,17 @@ import profileImg from '../images/profile_v3.webp';
 export const PRIMARY_INFO = [
   `I am an enthusiastic full-stack LAMP/MERN web developer who enjoys experimenting
         with new programming concepts & technologies`,
-  `I'm currently working as an Associate Software Engineer at Dassault Systèmes`
+  `I'm currently working as a Software Development Engineer at AMC Bridge, India`
 ];
 
 export const SECONDARY_INFO: {
   [key: string]: string[];
 } = {
   'hobbies & interests': [
-    'Fan of fantasy, action & adventure movies',
-    '❤️ playing online FPS games & football',
-    'I liked to meet new people.. over texting > Well, not anymore!'
+    'Used to be a fan of fantasy, action & adventure movies',
+    'Anime!',
+    'I like playing online FPS games & football',
+    "That's it ig :)"
   ],
   'technical knowledge': [
     `Worked with PHP frameworks like Laravel & Codeigniter for developing REST
@@ -46,10 +48,24 @@ export const TIMELINE_INFO: {
   Icon?: FC;
 }[] = [
   {
-    date: 'July 2022 - Present',
+    date: 'September 2025 - Present',
+    title: 'Software Development Engineer III',
+    place: 'Pune',
+    titleColor: 'info',
+    description: 'AMC Bridge',
+    Icon: BadgeOutlinedIcon
+  },
+  {
+    date: 'March 2025 - Sep 2025',
+    title: 'Software Engineer Specialist',
+    place: 'Pune',
+    description: 'Dassault Systèmes',
+    Icon: WorkIcon
+  },
+  {
+    date: 'July 2022 - March 2025',
     title: 'Associate Software Engineer',
     place: 'Pune',
-    titleColor: 'success',
     description: 'Dassault Systèmes',
     Icon: WorkIcon
   },
